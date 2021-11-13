@@ -1,0 +1,213 @@
+.login_page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginfrom {
+  width: 100%;
+  margin-top: 50px;
+  max-width: 400px;
+  background: #fff;
+  padding: 10px 25px;
+  border-radius: 5px;
+  color: #000;
+  text-align: left;
+  font-weight: 300;
+  min-height: 350px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  -webkit-box-shadow: 0px 15px 15px -5px #0e0e0e;
+  box-shadow: 0px 15px 15px -5px #0e0e0e;
+  transform: scale(0);
+}
+
+.loginfrom > div > h1 {
+  font-weight: 300;
+  margin-bottom: 5px;
+}
+
+.loginfrom > div > .logininputWrap {
+  width: 100%;
+  position: relative !important;
+  display: flex;
+  flex-direction: column;
+}
+
+.loginfrom > div > .logininputWrap > input[type='password'],
+.loginfrom > div > .logininputWrap > input[type='text'],
+.loginfrom > div > .logininputWrap > input[type='email'] {
+  width: calc(100% - 10px);
+  height: 50px;
+  margin-bottom: 0;
+  background: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 0.5px solid #696969;
+  color: #000;
+  font-weight: 300;
+  padding-left: 5px;
+  margin-top: 10px;
+  transition: all 0.5s ease-in-out;
+  transform: translateX(-200%);
+}
+
+.loginfrom > div > .logininputWrap > input[type='password']:focus,
+.loginfrom > div > .logininputWrap > input[type='text']:focus,
+.loginfrom > div > .logininputWrap > input[type='email']:focus {
+  border-bottom: 1px solid transparent;
+}
+
+.loginfrom > div > .logininputWrap > .line:after {
+  width: calc(100%);
+  display: block;
+  content: '';
+  border-bottom: solid 2px #ff9307;
+  transform: scaleX(0);
+  transition: transform 500ms ease-in-out;
+  position: relative;
+  top: -2px;
+}
+
+.loginfrom > div > .logininputWrap > input[type='password']:focus + .line:after,
+.loginfrom > div > .logininputWrap > input[type='text']:focus + .line:after,
+.loginfrom > div > .logininputWrap > input[type='email']:focus + .line:after {
+  transform: scaleX(1);
+}
+
+/* Change Autocomplete styles in Chrome*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border-bottom: 1px solid #ff9307;
+  -webkit-text-fill-color: #ff9307;
+  -webkit-box-shadow: 0 0 0px 1000px #242424 inset;
+  transition: background-color 5000s ease-in-out 0s;
+  font-weight: 300;
+}
+
+.loginfrom > div > .logininputWrap > .loginformerrormsg {
+  position: absolute;
+  top: 10px;
+  right: 0px;
+  z-index: 50;
+  color: #ff9307;
+  animation: slide-error 250ms forwards;
+  animation-timing-function: ease-in-out;
+  font-size: 14px;
+}
+
+.loginfrom > .btnWrap {
+  transform: translateX(-100%);
+}
+
+.loginfrom > .btnWrap > button {
+  width: 200px;
+  margin-top: 30px;
+}
+
+.loginfrom > .btnWrap > p > a {
+  color: #ff9307 !important;
+}
+
+.loginfrom > .btnWrap > p > a:hover {
+  text-decoration: underline;
+}
+
+.logout_wrap {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #202020;
+  padding-right: 0;
+  border-top-left-radius: 5px;
+  border-bottom: none;
+  border-right: none;
+}
+
+.loggedin_status_layout {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  z-index: 9999;
+}
+
+.loggedin_status_layout h3 {
+  cursor: default;
+  font-weight: 300;
+  margin: 0;
+  font-size: 18px;
+  padding-left: 15px;
+}
+
+.loggedin_status_layout span {
+  padding: 10px 15px;
+  transition: all 0.3s ease-in-out;
+}
+
+.loggedin_status_layout span:hover {
+  cursor: pointer;
+  color: #ff9307;
+  background: #fff;
+}
+
+.logout_wrap ul {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  max-width: 200px;
+  margin-left: auto;
+  position: fixed;
+  bottom: 40px;
+  right: 0px;
+  width: 200px;
+  background-color: #202020;
+}
+
+.logout_wrap ul li {
+  margin: 0;
+  padding: 10px 0;
+  text-align: right;
+  padding-right: 20px;
+  transition: all 0.3s ease-in-out;
+  color: #fff;
+}
+
+.logout_wrap ul li:hover > a {
+  color: #ff9307;
+  width: 100%;
+}
+
+.logout_wrap ul li:hover {
+  color: #ff9307;
+  background: #fff;
+  cursor: pointer;
+  font-weight: normal;
+}
+
+.password_eye_toogle {
+  position: absolute;
+  bottom: 20px;
+  right: 0px;
+  font-size: 1rem;
+}
+
+.password_eye_toogle:hover {
+  color: #ff9307;
+  cursor: pointer;
+}

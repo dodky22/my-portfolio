@@ -1,0 +1,259 @@
+.adminprojects {
+  margin-top: 100px;
+}
+
+.adminprojects > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.adminprojects > div > h1 {
+  font-weight: 300;
+}
+
+.adminprojects > div > button {
+  padding: 10px 15px;
+}
+
+.adminprojects > div > button > i {
+  margin-right: 10px;
+  border: none;
+  outline: none;
+}
+
+.adminprojects > div > button:hover {
+  cursor: pointer;
+}
+
+.adminprojects > .projectstable {
+  width: 100%;
+  background: rgb(239, 239, 239);
+  text-align: left;
+  border-collapse: collapse;
+}
+
+.adminprojects > .projectstable tr {
+  height: 50px;
+  color: #000;
+  border-bottom: 1px solid #2f2f2f;
+}
+
+.adminprojects > .projectstable tr td,
+.adminprojects > .projectstable tr th {
+  padding: 5px;
+  color: #000;
+}
+
+.adminprojects > .projectstable tr td a i {
+  color: #000;
+}
+.adminprojects > .projectstable > tbody > tr > td:nth-child(3) > a {
+  padding: 8px 0;
+}
+.adminprojects
+  > .projectstable
+  > tbody
+  > tr
+  > td:nth-child(3)
+  > a:hover
+  > button,
+.adminprojects > .projectstable > tbody > tr > td:nth-child(3) > button:hover {
+  cursor: pointer;
+}
+.adminprojects
+  > .projectstable
+  > tbody
+  > tr
+  > td:nth-child(3)
+  > a:hover
+  > button
+  > i {
+  color: #ff9307;
+}
+.adminprojects > .projectstable > tbody > tr > td:nth-child(3) > a > button {
+  background: #fff;
+}
+
+.adminprojects > .projectstable > tbody > tr > td:nth-child(3) > a > button,
+.adminprojects > .projectstable > tbody > tr > td:nth-child(3) > button {
+  height: 100%;
+  padding: 8px 13px;
+  text-align: center;
+  border: none;
+  outline: none;
+  transition: all ease-in-out 0.3s;
+}
+
+.adminprojects > .projectstable > tbody > tr > td:nth-child(3) > button {
+  background: rgb(221, 2, 2);
+}
+
+.adminprojects > .projectstable > tbody > tr > td:nth-child(3) > button > i {
+  color: #fff;
+  pointer-events: none;
+}
+
+.adminprojects > .projectstable > tbody > tr > td:nth-child(3) > button:hover {
+  background: #fff;
+}
+
+.adminprojects
+  > .projectstable
+  > tbody
+  > tr
+  > td:nth-child(3)
+  > button:hover
+  > i {
+  color: rgb(221, 2, 2);
+}
+
+.adminprojects > .projectstable > tbody > tr > td:nth-child(3),
+.adminprojects > .projectstable > thead > tr > th:nth-child(3) {
+  text-align: center;
+}
+
+.adminprojects > .projectstable > tbody > tr:nth-child(odd) {
+  background: rgb(223, 223, 223);
+}
+
+.nameLink > a {
+  color: #000;
+}
+
+.nameLink > a:hover {
+  color: #ff9307;
+}
+
+/*
+*PROJECT EDIT
+*/
+
+.editSection {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+}
+
+.editSection > h1 {
+  text-align: left;
+  font-weight: 300;
+  margin-top: 25px;
+}
+.editBackBtn {
+  float: left;
+  padding: 10px 15px;
+  cursor: pointer;
+  background: white;
+  color: #000;
+  border: 1px solid #000;
+  outline: none;
+  border-radius: 3px;
+}
+
+.editBackBtn:hover {
+  background: #ccc;
+}
+
+.projectEditForm {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background: #fff;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.projectEditForm > div:first-child {
+  width: calc(50% - 17px);
+  min-width: 200px;
+  margin-right: 12px;
+}
+
+.projectEditForm > div:last-child {
+  width: calc(50% - 17px);
+  min-width: 200px;
+}
+
+.projectEditForm .projectEditFormGroup {
+  width: 100%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.projectEditForm .projectEditFormGroup > label {
+  color: #000;
+  font-weight: normal;
+  text-transform: uppercase;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.projectEditForm .projectEditFormGroup > label > span {
+  font-size: 12px;
+  text-transform: lowercase;
+}
+
+.projectEditForm .projectEditFormGroup > input {
+  min-height: 40px;
+  height: 100%;
+  padding-left: 5px;
+  width: calc(100% - 10px);
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.projectEditForm .projectEditFormGroup > textarea {
+  padding-left: 5px;
+  padding-top: 5px;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.updateButton {
+  width: calc(100% - 10px);
+  padding: 10px 0;
+  background: #ff9307;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #000;
+  font-weight: normal;
+  border: 1px solid #000;
+}
+
+.updateButton:hover {
+  background: #df8107;
+}
+
+.filegroup {
+  display: flex;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  margin-bottom: 25px;
+}
+.filegroup > input {
+  max-width: 125px;
+  padding: 0px !important;
+  margin: 0 !important;
+  height: 30px !important;
+  min-height: unset !important;
+}
+
+@media only screen and (max-width: 700px) {
+  .projectEditForm {
+    flex-direction: column;
+  }
+
+  .projectEditForm > div:first-child,
+  .projectEditForm > div:last-child {
+    width: 100%;
+  }
+}

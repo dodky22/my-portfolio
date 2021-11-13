@@ -1,0 +1,187 @@
+.typewriter {
+  display: inline-block;
+}
+
+.typewriter .single_item_heading {
+  color: #cacaca;
+  font-weight: 600;
+  letter-spacing: 0px;
+  display: inline-block;
+  text-transform: uppercase;
+  opacity: 0;
+  padding-right: 5px;
+  margin: 5px 0;
+  text-align: left;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: 1px solid transparent; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  animation: typing 1s steps(40, end) forwards,
+    blink-caret 0.75s step-end infinite;
+  animation-delay: 0.5s;
+}
+
+/* The typing effect */
+@keyframes typing {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    widows: 50%;
+  }
+  80% {
+    opacity: 1;
+    width: 80%;
+  }
+  100% {
+    opacity: 1;
+    width: 100%;
+  }
+}
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+
+  50% {
+    border-color: #ff9307;
+  }
+}
+
+.single_item_head_wrap {
+  width: 100%;
+  text-align: left;
+}
+
+.single_project_container {
+  padding-top: 100px;
+  color: #fff;
+  font-weight: 300;
+}
+.single_project_container p {
+  color: #cacaca;
+}
+
+.single_item_main_div {
+  width: 80%;
+  margin: 0 auto 3rem auto;
+}
+
+.single_item_main_div p {
+  color: #fff;
+  font-weight: 300;
+  text-align: left;
+}
+.single_item_buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.single_item_button {
+  margin-bottom: 20px !important;
+}
+
+.single_item_button a {
+  color: #fff !important;
+}
+
+.single_item_button_disabled {
+  background-color: #333 !important;
+  color: #fff !important;
+  border: none;
+  outline: none;
+  opacity: 0.8;
+  height: 45px;
+  width: 100px;
+  margin-bottom: 20px !important;
+  border-radius: 5px;
+  box-shadow: 0px 2px 2px rgb(0, 0, 0, 50%);
+  cursor: not-allowed;
+}
+
+.single_item_main_div h2 {
+  font-size: 32px;
+  text-transform: uppercase;
+  font-weight: 400;
+  text-align: left;
+  margin-top: 50px;
+  margin-bottom: 10px;
+  padding-bottom: 0;
+  color: #cacaca;
+}
+
+.single_item_about {
+  padding-bottom: 1rem;
+}
+.single_item_tech {
+  margin-bottom: 0 !important;
+}
+
+.single_item_main_div h3 {
+  font-weight: 300;
+  text-align: left;
+  margin-bottom: 10px;
+  padding-bottom: 0;
+  color: #cacaca;
+}
+
+.single_item_main_div .tech_list_items {
+  color: #cacaca;
+  text-align: left;
+  overflow: hidden;
+  list-style: none;
+  padding-left: 10px;
+}
+.single_item_main_div .tech_list_items li {
+  margin: 10px 0;
+  font-size: 20px;
+  font-weight: 300;
+  transform: translateX(-100%);
+}
+.single_item_main_div .tech_list_items li:before {
+  content: '✓';
+  padding-right: 15px;
+}
+
+.fadeFromLeft {
+  animation-name: fadeInLeft;
+  animation-duration: 350ms;
+  animation-delay: 350ms;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+}
+
+.fadeFromTop {
+  animation-name: fadeInTop;
+  animation-duration: 350ms;
+  animation-delay: 350ms;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
