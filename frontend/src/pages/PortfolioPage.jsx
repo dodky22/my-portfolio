@@ -84,6 +84,7 @@ const Portfolio = styled.div`
   flex-direction: column;
   overflow: hidden;
   padding-top: 125px;
+  
 `
 
 export default PortfolioPage

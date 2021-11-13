@@ -52,6 +52,9 @@ const Contact = styled.div`
 const Text = styled.p`
     font-size: 18px;
     text-align: left;
+    @media (max-width: 480px) {
+        font-size: 14px;
+    }
 `
 
 export default ContactPage

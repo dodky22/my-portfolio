@@ -72,13 +72,14 @@ const Filter = ({projects}) => {
     let filter = filterValues.map((item, id) => {
       return (
         <span 
-          
           key={id}
           className={item.toUpperCase() === selectedValue ? `${styles.portfolio_link} ${styles.activeFilter}` : styles.portfolio_link}
           onClick={(e) => handleClick(e)}
           style={{"--animation-order": 1 + id}}
         >
+          <span>
           {item.toUpperCase()}
+          </span>
         </span>
       );
     });

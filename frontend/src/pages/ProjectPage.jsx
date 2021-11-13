@@ -50,7 +50,7 @@ const ProjectPage = ({match}) => {
                         </div>
                         <Separator />
                     </div>
-                    <p id="quitFadeUp" className="singlePortfolioEnterDown" >{shortDesc}</p>
+                    <p id="quitFadeUp"  >{shortDesc}</p>
                     <div  id="quitFadeUp" className={`${styles.single_item_buttons} singlePortfolioEnterDown`}>
                         <AwesomeButton className={styles.single_item_button} type="primary" href={url} >
                             Visit the website

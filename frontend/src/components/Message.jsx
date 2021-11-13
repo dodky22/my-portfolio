@@ -6,7 +6,7 @@ const Message = ({color, children}) => {
 
     
     return (
-            <div className={styles.statusmessage} style={{background: color}}>
+            <div id="quitFadeUp" className={styles.statusmessage} style={{background: color}}>
                 {children}
             </div>
     )

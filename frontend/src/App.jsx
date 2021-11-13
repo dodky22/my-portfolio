@@ -44,6 +44,12 @@ const Container = styled.div`
   padding: 0px 25px;
   min-height:100vh;
   height:100%;
+  @media (max-width: 768px) {
+    padding: 0px 50px;
+  }
+  @media (max-width: 425px) {
+    padding: 0px 25px;
+  }
 `
 
 export default App;

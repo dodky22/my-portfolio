@@ -169,3 +169,14 @@ select:-webkit-autofill:focus {
     transform: translateX(0);
   }
 }
+
+@media (max-width: 480px) {
+  .contactformerrormsg {
+    font-size: 12px !important;
+  }
+  .contactinputWrap > input[type='text'],
+  .contactinputWrap > input[type='email'],
+  .contactinputWrap > textarea {
+    font-size: 14px;
+  }
+}
