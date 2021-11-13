@@ -31,42 +31,88 @@ const HomePage = () => {
         <Arrows linkRight={'/portfolio'} labelRight={'portfolio'} linkLeft={'/home'} labelLeft={'home'}/>
         <SocialLinks />
         <Home>
+            {/* DESKTOP */}
             <div id="quitFadeUp" className={`${styles.typewriter} ${styles.desktop_title} `}>
                 <h1 className={styles.home_heading}>Hello, my name is Jozef Müller</h1>
             </div>
             <div   className={`${styles.desktop_home_p}`}>
                 <div id="quitFadeUp" className={styles.typewriter}>
-                <p  className={styles.home_paragraph}>
-                    I am 24 years old student. Aspiring to become a web developer. I
-                    am learning
-                </p>
+                    <p  className={styles.home_paragraph}>
+                        I am 24 years old student. Aspiring to become a web developer. I
+                        am learning
+                    </p>
                 </div>
                 <br/>
                 <div id="quitFadeUp" className={`${styles.typewriter} ${styles.desktop_middle_line}`}>
+                    <p className={styles.home_paragraph_2}>
+                        programming in my spare time. If you want to see my work feel
+                        free to
+                    </p>
+                </div>
+                <br/>
+                <div id="quitFadeUp" className={styles.typewriter}>
+                    <p className={styles.home_paragraph_3}>
+                            visit my {" "}
+                            <Link to="/portfolio" className={styles.homepage_link}>
+                                <strong>portfolio page. </strong>
+                            </Link>
+                            You can contact me via email at:{" "}
+                            <a href="mailto:dodkymull@gmail.com" className={styles.homepage_link}>
+                                <strong>dodkymull@gmail.com</strong>
+                            </a>  
+                    </p>                          
+                </div>
+                <br/>
+          </div>
+          {/* END OF DESKTOP */}
+          {/* MOBILE  */}
+            <div id="quitFadeUp" className={`${styles.typewriter} ${styles.mobile_title} `}>
+                <h1 className={styles.home_heading_1}>Hello, my name is</h1>
+            </div>
+            <div id="quitFadeUp" className={`${styles.typewriter} ${styles.mobile_title} `}>
+                <h1 className={styles.home_heading_2}>Jozef Müller</h1>
+            </div>
+          <div className={`${styles.mobile_home_p}`}>
+                <div id="quitFadeUp" className={styles.typewriter}>
+                <p  className={styles.home_paragraph}>
+                    I am 24 years old student. Aspiring to become a 
+                </p>
+                </div>
+                <br/>
+                <div id="quitFadeUp" className={`${styles.typewriter} ${styles.mobile_middle_line}`}>
                 <p className={styles.home_paragraph_2}>
-                    programming in my spare time. If you want to see my work feel
-                    free to
+                    web developer. I am learning programming in  my spare 
                 </p>
                 </div>
                 <br/>
                 <div id="quitFadeUp" className={styles.typewriter}>
-                <p className={styles.home_paragraph_3}>
-                    visit my {" "}
-                   
+                    <p className={styles.home_paragraph_3}>
+                        time. If you want to see my work feel free to visit
+                    </p>                          
+                </div>
+                <br/>
+                <div id="quitFadeUp" className={styles.typewriter}>
+                    <p className={styles.home_paragraph_4}>
+                        my
                         <Link to="/portfolio" className={styles.homepage_link}>
-                            <strong>portfolio page. </strong>
+                            <strong> portfolio page. </strong>
                         </Link>
-                    
-                    You can contact me via email at:{" "}
-                    
+                        You can contact me via
+                    </p>                          
+                </div>
+                <br/>
+                <div id="quitFadeUp" className={styles.typewriter}>
+                    <p className={styles.home_paragraph_5}>
+                        email at:
                         <a href="mailto:dodkymull@gmail.com" className={styles.homepage_link}>
-                            <strong>dodkymull@gmail.com</strong>
+                            <strong> dodkymull@gmail.com</strong>
                         </a>
-                   
-                </p>                          
+                    </p>                          
                 </div>
                 <br/>
           </div>
+          {/* END OF MOBILE */}
+          {/* BUTTONS */}
           <div id="quitFadeDown"  className={`${styles.buttons_container}`} ref={el => (buttons = el)} >
             <Link to="/portfolio">
                 <AwesomeButton type="primary"><span style={{fontWeight:500}}>PORFOLIO</span></AwesomeButton>
@@ -75,6 +121,7 @@ const HomePage = () => {
                 <AwesomeButton type="primary"><span style={{fontWeight:500}}>CONTACT</span></AwesomeButton>
             </Link>
           </div>
+          {/* ENDOF BUTTONS */}
         </Home>
         </>
     )

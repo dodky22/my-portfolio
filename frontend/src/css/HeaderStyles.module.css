@@ -195,7 +195,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: rgb(202, 202, 202);
+  color: #cacaca;
   margin: 50px 0px;
 }
 
@@ -203,11 +203,19 @@
   margin-bottom: 0;
   border-bottom: none;
   margin-top: 25px;
+  text-transform: uppercase;
 }
 
 .get_in_touch p {
   line-height: 1.5rem;
   text-align: center !important;
+}
+
+.get_in_touch p a {
+  color: #cacaca;
+}
+.get_in_touch p a:hover {
+  color: #ff9307;
 }
 
 .get_in_touch_link {

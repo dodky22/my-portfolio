@@ -333,4 +333,11 @@ body::-webkit-scrollbar-thumb {
   .slick-slider {
     min-height: 100% !important;
   }
+  .aws-btn .aws-btn__content > span:nth-child(1) span {
+    font-weight: 400 !important;
+  }
+  .aws-btn .aws-btn__content > span:nth-child(1) {
+    text-shadow: none !important;
+    text-transform: uppercase !important;
+  }
 }

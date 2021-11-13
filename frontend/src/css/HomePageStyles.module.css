@@ -2,7 +2,7 @@
   display: inline-block;
 }
 
-.typewriter .home_heading {
+.typewriter.desktop_title .home_heading {
   color: white;
   font-weight: 600;
   letter-spacing: 0px;
@@ -15,8 +15,8 @@
   margin-bottom: 2rem;
 }
 
-.typewriter .home_paragraph,
-.typewriter .home_paragraph_2 {
+.desktop_home_p .typewriter .home_paragraph,
+.desktop_home_p .typewriter .home_paragraph_2 {
   color: white;
   font-weight: 300;
   display: block;
@@ -28,7 +28,7 @@
   animation: typing 2s steps(40, end) forwards, blink-caret 0.75s step-end 3;
 }
 
-.typewriter .home_paragraph_3 {
+.desktop_home_p .typewriter .home_paragraph_3 {
   color: white;
   display: block;
   font-weight: 300;
@@ -41,20 +41,90 @@
 .typewriter .home_heading {
   animation-delay: 1s;
 }
-.typewriter .home_paragraph {
+.desktop_home_p .typewriter .home_paragraph {
   animation-delay: 2.5s;
 }
-.typewriter .home_paragraph_2 {
+.desktop_home_p .typewriter .home_paragraph_2 {
   animation-delay: 4.5s;
 }
-.typewriter .home_paragraph_3 {
+.desktop_home_p .typewriter .home_paragraph_3 {
   animation: typing 2s steps(40, end) forwards,
     blink-caret 0.75s step-end infinite;
   animation-delay: 6.5s;
 }
 
+/*
+* MOBILE TYPING ANIM
+*/
+
+.mobile_title {
+  display: none;
+}
+.typewriter.mobile_title .home_heading_1,
+.typewriter.mobile_title .home_heading_2 {
+  color: white;
+  font-weight: 600;
+  letter-spacing: 0px;
+  opacity: 0;
+  display: block;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: 3px solid transparent; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  animation: typing 0.75s steps(40, end) forwards, blink-caret 0.75s step-end 1;
+}
+
+.mobile_home_p .typewriter .home_paragraph,
+.mobile_home_p .typewriter .home_paragraph_2,
+.mobile_home_p .typewriter .home_paragraph_3,
+.mobile_home_p .typewriter .home_paragraph_4,
+.mobile_home_p .typewriter .home_paragraph_5 {
+  color: white;
+  font-weight: 300;
+  display: block;
+  opacity: 0;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: 2px solid transparent; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 3px 0px;
+  animation: typing 1.25s steps(40, end) forwards, blink-caret 0.75s step-end 1;
+}
+.typewriter.mobile_title .home_heading_2 {
+  animation-delay: 0.75s;
+}
+.mobile_home_p .typewriter .home_paragraph {
+  animation-delay: 2s;
+}
+.mobile_home_p .typewriter .home_paragraph_2 {
+  animation-delay: 3.25s;
+}
+.mobile_home_p .typewriter .home_paragraph_3 {
+  animation-delay: 4.5s;
+}
+.mobile_home_p .typewriter .home_paragraph_4 {
+  animation-delay: 5.75s;
+}
+.mobile_home_p .typewriter .home_paragraph_5 {
+  animation: typing 1.25s steps(40, end) forwards,
+    blink-caret 0.75s step-end infinite;
+  animation-delay: 7s;
+}
+.mobile_home_p .typewriter .home_paragraph_5 > a,
+.mobile_home_p .typewriter .home_paragraph_4 > a {
+  font-weight: 500 !important;
+  color: #cacaca;
+}
+
+.mobile_home_p .typewriter .home_paragraph_5 > a:hover,
+.mobile_home_p .typewriter .home_paragraph_4 > a:hover {
+  color: #ff9307;
+}
+
 .desktop_home_p {
   max-width: 800px;
+}
+
+.mobile_home_p {
+  display: none;
 }
 
 .homepage_link {
@@ -219,5 +289,39 @@
 
   50% {
     border-color: #ff9307;
+  }
+}
+
+@media (max-width: 640px) {
+  .home_paragraph,
+  .home_paragraph_2,
+  .home_paragraph_3 {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 570px) {
+  .mobile_home_p,
+  .mobile_title {
+    display: block !important;
+  }
+  .desktop_home_p,
+  .desktop_title {
+    display: none !important;
+  }
+  .mobile_title .home_heading_1 {
+    font-size: 28px !important;
+    margin-bottom: 5px;
+  }
+  .mobile_title .home_heading_2 {
+    margin-top: 5px;
+    font-size: 28px !important;
+  }
+  .buttons_container {
+    margin-top: 50px;
+    flex-direction: column;
+  }
+  .buttons_container button {
+    margin: 5px 0px !important;
   }
 }
