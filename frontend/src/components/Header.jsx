@@ -1,6 +1,7 @@
 import React, {useEffect, useRef} from 'react'
 
-import {Link, useLocation } from 'react-router-dom'
+import {NavLink, useLocation, useHistory } from 'react-router-dom'
+import {animateElementsOut, toggleTimeline, animOutTimeline} from '../animationHelpers/gsapHelpers.js'
 
 import HeaderHomepageLink from './HeaderHomepageLink.jsx'
 
@@ -9,93 +10,76 @@ import styled from 'styled-components'
 import styles from '../css/HeaderStyles.module.css'
 
 const Header = () => {
+
     let animNav = useRef(null);
     let ulWrap = useRef(null);
     let navUl = useRef(null);
 
     let location = useLocation()
-
-    let burger = useRef(null);
-    let homeLink = useRef(null);
+    let history = useHistory()
 
     let topArr = useRef(null);
     let botArr = useRef(null);
     let midArr = useRef(null);
 
     let tlnav = gsap.timeline({paused: true, reversed: true})
-    let tlclosenav = gsap.timeline({paused: true, reversed: true})
 
-    useEffect(() => {
-        gsap.to(burger, {duration: 0.5, x: 0,delay: 1, ease:Power4.easeInOut})
-        gsap.to(homeLink, {duration: 0.5, x: 0,delay: 1, ease:Power4.easeInOut})
-    }, [])
+    useEffect(() => {    
 
-    useEffect(() => { 
-           
-        tlnav.to(animNav, {duration: 0.5, y:0, ease:Power4.easeInOut})
+        tlnav.to(animNav, {duration: 0.5, y:0, ease:Power4.easeInOut}, 'start')
             .to(ulWrap, {duration: 0.5, height: 300, ease:Power4.easeInOut})
             .to([...navUl.children], {duration:0.3,  x:0, ease:Power4.easeInOut, stagger:0.1}, '-=0.1')
-        
-        tlclosenav.to(topArr, {duration: 0.2, rotate: 135, y:10, ease:Power4.easeInOut} )
-                    .to(botArr, {duration: 0.2, rotate: '-135', y:'-10', ease:Power4.easeInOut}, '-=0.2')
-                    .to(midArr, {duration: 0.2, width: 0, ease:Power4.easeInOut}, '-=0.2')
-        // eslint-disable-next-line
-    }, [])
+            .to(topArr, {duration: 0.2, rotate: 135, y:10, ease:Power4.easeInOut}, 'start' )
+            .to(botArr, {duration: 0.2, rotate: '-135', y:'-10', ease:Power4.easeInOut}, 'start')
+            .to(midArr, {duration: 0.2, width: 0, ease:Power4.easeInOut}, 'start')
 
-    const toggleTimeline = (tlnav) => {
-        tlnav.reversed() ? tlnav.play() :  tlnav.reverse()
-    }
+    }, [tlnav])
 
-     const handleClick = () => {
-        toggleTimeline(tlnav);
-        toggleTimeline(tlclosenav);
-    }
-
-    const handleAnimation = (e, tlnav) => {
+    const handleAnimation = (e) => {
         e.preventDefault()
 
-        toggleTimeline(tlnav);
-        toggleTimeline(tlclosenav);
-
-        setTimeout(() => {
-            if(location.pathname !== `/${e.target.href.split('/').pop()}`){
-                gsap.to('#quitFadeUp', {duration: 0.2 ,y:'-100', opacity:0, ease:Power4.easeInOut , stagger:0.1})
-                gsap.to('#quitFadeDown', {duration: 0.2 ,y:'100', opacity:0, ease:Power4.easeInOut , stagger:0.1})
-                gsap.to('#quitFadeLeft', {duration: 0.2 ,x:'-100', opacity:0, ease:Power4.easeInOut , stagger:0.1})
-                gsap.to('#quitFadeRight', {duration: 0.2 ,x:'100', opacity:0, ease:Power4.easeInOut , stagger:0.1})
-           
+        if (e.target.href) {
+            if(`/${e.target.href.split('/').pop()}` ===  location.pathname){
+                toggleTimeline(tlnav)       
+            }          
+            else {
                 setTimeout(() => {
-                    window.location = e.target.href; 
-                }, 1000);
-            }
-        }, tlnav.duration()*1000);
 
-        
+                    animateElementsOut()
+
+                    setTimeout(() => {
+                        history.push(`/${e.target.href.split('/').pop()}`)
+                    }, animOutTimeline.duration() * 1000);
+
+                }, (tlnav.duration() * 1000) + 300)
+                toggleTimeline(tlnav)       
+            }          
+        }else{
+            toggleTimeline(tlnav)       
+        } 
     }
 
     return (
         <Head > 
-            <div className={styles.col}  ref={el => homeLink = el}>
+            <div id="homelinkHeader"  className={styles.col}>
                 <HeaderHomepageLink />
             </div>         
-            <div   className={styles.col} ref={el => burger = el}>
-                <div className={styles.special_con} onClick={() => {
-                handleClick()
-                }}>
-                    <div className={`${styles.bar} ${styles.arrow_top_fall}`} ref={el => topArr = el} ></div>
-                    <div className={`${styles.bar} ${styles.arrow_middle_fall}`} ref={el => midArr = el}></div>
-                    <div className={`${styles.bar} ${styles.arrow_bottom_fall}`} ref={el => botArr = el} ></div>
-                </div>
+            <div   className={styles.col} >
+                <button id="burgerHeader" className={styles.special_con} onClick={(e) => handleAnimation(e)}>
+                    <span className={`${styles.bar} ${styles.arrow_top_fall}`} ref={el => topArr = el} ></span>
+                    <span className={`${styles.bar} ${styles.arrow_middle_fall}`} ref={el => midArr = el}></span>
+                    <span className={`${styles.bar} ${styles.arrow_bottom_fall}`} ref={el => botArr = el} ></span>
+                </button>
             </div>
-            <nav ref={el => animNav = el} className={styles.navigation}>
+            <nav ref={el => animNav = el} className={styles.navigation} >
                 <div className={styles.ulNavWrapper} ref={el => ulWrap = el}>
                     <ul ref={el => navUl = el}>
-                        <li><Link to="/" onClick={(e) =>  handleAnimation(e,tlnav)}>HOME</Link></li>
-                        <li><Link to="/portfolio" onClick={(e) => handleAnimation(e,tlnav)}>PORTFOLIO</Link></li>
-                        <li><Link to="/contact" onClick={(e) =>  handleAnimation(e,tlnav)}>CONTACT</Link></li>
+                        <li><NavLink to="/" onClick={(e) => handleAnimation(e)}>HOME</NavLink></li>
+                        <li><NavLink to="/portfolio" onClick={(e) => handleAnimation(e)}>PORTFOLIO</NavLink></li>
+                        <li><NavLink to="/contact" onClick={(e) =>  handleAnimation(e)}>CONTACT</NavLink></li>
                     </ul>
                 </div>
-            </nav>
+            </nav>         
        </Head>            
     )
 }
@@ -104,8 +88,7 @@ const Header = () => {
 const Head = styled.div`
   top: 0;
   height: 80px;
-  width: calc(100% - 50px);
-  max-width: 1020px;
+  width: 100% ;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

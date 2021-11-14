@@ -76,6 +76,10 @@
   transition: transform 0.2s ease-out 0.2s;
   pointer-events: none !important;
 }
+.arrowRight > em {
+  right: calc(50% - 18px);
+  left: unset;
+}
 .arrowRight > em:before,
 .arrowRight > em:after {
   content: ' ';
@@ -181,8 +185,18 @@
   * END OF ARROWS
   */
 
-@media (max-width: 1000px) {
+@media (max-width: 770px) {
   .arrows_link_main {
+    width: 50px;
+  }
+  .arrows_link_main em {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .arrows_link_main span {
     display: none !important;
   }
 }

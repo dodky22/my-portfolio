@@ -5,7 +5,7 @@ import ContactForm from '../components/ContactForm.jsx'
 import Meta from '../components/Meta.jsx'
 import Arrows from '../components/Arrows.jsx'
 
-import { gsap, Power3 } from 'gsap'
+import { gsap } from 'gsap'
 
 import styles from '../css/ContactPageStyles.module.css'
 import styled from 'styled-components'
@@ -14,9 +14,9 @@ const ContactPage = () => {
     let text = useRef(null);
 
     useEffect(() => {
-        gsap.from(text, {duration: 0.5, x:'-100', opacity: 0, ease:Power3.easeInOut, delay: 0.5})
-        // eslint-disable-next-line
+        gsap.to(text, {duration: 0.2, x:0, delay: 1})
     }, [])
+
     return (
         <>
         <Meta title='Contact | Let`s talk | Jozef Müller'/>      
@@ -26,7 +26,8 @@ const ContactPage = () => {
                 <h1 className={styles.contact_heading}>CONTACT</h1>
             </div>
             <Separator />
-            <Text id="quitFadeUp" ref={el => (text = el)} >If you want to get in touch and talk please fill up this form or contact me via email at: 
+            <Text id="quitFadeUp" ref={el => (text = el)}>
+                If you want to get in touch and talk please fill up this form or contact me via email at: 
                 <a href="mailto:dodkymull@gmail.com" className={styles.homepage_link}>
                     <strong> dodkymull@gmail.com</strong>
                 </a>
@@ -46,12 +47,15 @@ const Contact = styled.div`
   justify-content: center;
   flex-direction: column;
   overflow: hidden;
-  padding-top: 50px;
+  padding-top:50px;
 `
 
 const Text = styled.p`
     font-size: 18px;
     text-align: left;
+    color: #cacaca;
+    transform: translateX(-100%);
+    line-height: 1.4;
     @media (max-width: 480px) {
         font-size: 14px;
     }

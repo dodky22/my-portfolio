@@ -1,21 +1,22 @@
 import React from 'react'
-import {useLocation} from 'react-router-dom'
+import {useLocation, useHistory} from 'react-router-dom'
 
-import { gsap, Power3 } from 'gsap'
+import {animateElementsOut} from '../animationHelpers/gsapHelpers.js'
 
 import styles from '../css/HeaderStyles.module.css'
 
 
 const HeaderHomepageLink = () => {
-    const location = useLocation()
+    let location = useLocation()
+    let history = useHistory()
 
     const goBack = () => {
-        gsap.to('#quitFadeUp', {duration: 0.2 ,y:'-100', opacity:0, ease:Power3.easeInOut , stagger:0.1})
-        gsap.to('#quitFadeDown', {duration: 0.2 ,y:'100', opacity:0, ease:Power3.easeInOut , stagger:0.1})
-        gsap.to('#quitFadeLeft', {duration: 0.2 ,x:'-100', opacity:0, ease:Power3.easeInOut , stagger:0.1})
-        gsap.to('#quitFadeRight', {duration: 0.2 ,x:'100', opacity:0, ease:Power3.easeInOut , stagger:0.1})
+
+        animateElementsOut()
+
         setTimeout(() => {
-            (location.pathname === '/portfolio' || location.pathname === '/contact') ? window.location = '/' : window.location = '/portfolio';  
+            (location.pathname === '/portfolio' || location.pathname === '/contact') ? 
+            history.push('/') : history.push('/portfolio')  
         }, 1000);
     }
     

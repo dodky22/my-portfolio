@@ -1,19 +1,22 @@
 import React, {useEffect, useRef} from 'react'
 
-import {Link} from 'react-router-dom'
+import {Link, useHistory} from 'react-router-dom'
+
+import { gsap, Power3 } from 'gsap'
+import {animateElementsOut, animOutTimeline} from '../animationHelpers/gsapHelpers.js'
+
 import Meta from '../components/Meta.jsx'
 import Arrows from '../components/Arrows.jsx'
 import SocialLinks from '../components/SocialLinks.jsx'
 
 import {AwesomeButton} from 'react-awesome-button';
 
-import { gsap, Power3 } from 'gsap'
-
 import styled from 'styled-components'
 import styles from '../css/HomePageStyles.module.css'
 import "react-awesome-button/dist/styles.css";
 
 const HomePage = () => {
+    let history = useHistory()
     let buttons = useRef(null);
 
     useEffect(() => {
@@ -24,6 +27,28 @@ const HomePage = () => {
             ease:Power3.easeInOut,          
           })
     }, [buttons])
+
+    const handleHomeBtnClick = (e) => {
+        e.preventDefault()
+
+        let href 
+
+        if(e.target.classList.contains('aws-btn__content')){
+            href = `/${e.target.parentNode.parentNode.parentNode.href.split('/').pop()}`
+        }else if (e.target.classList.contains('aws-btn__wrapper')){
+            href = `/${e.target.parentNode.parentNode.href.split('/').pop()}`
+        }else if(e.target.classList.length === 0){
+            href = `/${e.target.parentNode.parentNode.parentNode.parentNode.parentNode.href.split('/').pop()}`
+        }else if (e.target.href) {
+            href = `/${e.target.href.split('/').pop()}`
+        }else return;
+
+        animateElementsOut()
+        setTimeout(() => {
+            history.push(href)
+        }, animOutTimeline.duration() * 1000);
+
+    }
 
     return (
         <>
@@ -114,11 +139,11 @@ const HomePage = () => {
           {/* END OF MOBILE */}
           {/* BUTTONS */}
           <div id="quitFadeDown"  className={`${styles.buttons_container}`} ref={el => (buttons = el)} >
-            <Link to="/portfolio">
-                <AwesomeButton type="primary"><span style={{fontWeight:500}}>PORFOLIO</span></AwesomeButton>
+            <Link to="/portfolio" onClick={(e) => {handleHomeBtnClick(e)}}>
+                <AwesomeButton type="primary"><span style={{fontWeight:500, userSelect: 'none'}}>PORFOLIO</span></AwesomeButton>
             </Link>
-            <Link to="/contact">
-                <AwesomeButton type="primary"><span style={{fontWeight:500}}>CONTACT</span></AwesomeButton>
+            <Link to="/contact" onClick={(e) => {handleHomeBtnClick(e)}}>
+                <AwesomeButton type="primary" ><span style={{fontWeight:500, userSelect: 'none'}}>CONTACT</span></AwesomeButton>
             </Link>
           </div>
           {/* ENDOF BUTTONS */}

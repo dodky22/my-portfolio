@@ -307,13 +307,13 @@ body::-webkit-scrollbar-thumb {
   .my_next_arr {
     display: flex !important;
     flex-direction: column;
-    align-items: end;
+    align-items: flex-end;
   }
 
   .my_prev_arr {
     display: flex !important;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
   }
 }
 

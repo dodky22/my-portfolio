@@ -3,7 +3,7 @@ import { useFormik } from 'formik';
 import {AwesomeButton} from 'react-awesome-button';
 import axios from 'axios'
 
-import {gsap, Power3} from 'gsap'
+import {gsap} from 'gsap'
 import styles from '../css/ContactPageStyles.module.css'
 import Message from '../components/Message'
  
@@ -46,11 +46,15 @@ import Message from '../components/Message'
   const [statuscolor, setstatuscolor] = useState(null)
 
   // create timeline
-  let tl = gsap.timeline()
+  let formtl = gsap.timeline()
 
   useEffect(() => {
-    tl.staggerTo([field1,field2,field3,button], 1, {x:0 ,delay: 1, ease:Power3.easeInOut}, 0.2)
-  }, [field1,field2,field3, tl])
+    formtl.to( field1, {duration:0.2, x:0, delay: 1.5})
+          .to( field2, {duration:0.2, x:0})
+          .to( field3, {duration:0.2, x:0})
+          .to( button, {duration:0.2, x:0})
+     // eslint-disable-next-line 
+  }, [])
 
    const formik = useFormik({
      // initial values of form

@@ -4,13 +4,13 @@
 }
 
 .col:nth-child(1) {
-  transform: translateX(-1000%);
+  /* transform: translateX(-1000%); */
   position: fixed;
   left: 50px;
   top: 30px;
 }
 .col:nth-child(2) {
-  transform: translateX(1000%);
+  /* transform: translateX(1000%); */
   position: fixed;
   right: 50px;
   top: 50px;
@@ -22,6 +22,9 @@
   z-index: 252;
   width: 50px;
   position: relative;
+  background: transparent;
+  border: none;
+  outline: none;
 }
 
 .bar {
@@ -30,7 +33,6 @@
   width: 50px;
   background: #cacaca;
   margin: 7px auto;
-
   transition: all 425ms cubic-bezier(0.05, 0.65, 0.18, 1);
 }
 .special_con:hover .bar {
@@ -66,7 +68,7 @@
 }
 
 .headerHomeLink:hover > i {
-  background-color: #fff;
+  background-color: #ff9307;
 }
 
 .headerHomeLink:hover i:nth-child(1) {
@@ -254,7 +256,8 @@
     width: 35px;
   }
   .col:nth-child(2) {
-    top: 35px;
+    top: 30px;
+    right: 20px;
   }
   .col:nth-child(1) {
     top: 20px;

@@ -58,7 +58,7 @@ const ImageSlider = ({images}) => {
           <Slider {...settings}>
             { images && images.map((el,id) => (
                 // <img key={id} src={el} alt="" width="100%" height="100%" style={{marginBottom: '-25px'}} />
-                <LazzyLoadImage imageUrl={el} />
+                <LazzyLoadImage imageUrl={el} key={id}/>
             ))}
           </Slider>
         </div>   

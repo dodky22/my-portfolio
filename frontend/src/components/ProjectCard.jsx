@@ -1,27 +1,26 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {Link, useHistory} from 'react-router-dom'
 
 import Ribbon from '../components/Ribbon'
 import LazzyLoadImage from '../components/LazzyLoadImage'
 
-import {gsap, Power4} from 'gsap'
+import {animateElementsOut, animOutTimeline} from '../animationHelpers/gsapHelpers.js'
 
 import styles from '../css/PortfolioPageStyles.module.css'
 
 const ProjectCard = ({animationOrder, project}) => {
+    let history = useHistory()
+
     const { name, technologies, imgs, status, _id } = project;
 
-    const animateElementsOut = (e) => {
+    const handleClick = (e) => {
         e.preventDefault()
         
-        gsap.to('#quitFadeUp', {duration: 0.2 ,y:'-100', opacity:0, ease:Power4.easeInOut , stagger:0.1})
-        gsap.to('#quitFadeDown', {duration: 0.2 ,y:'100', opacity:0, ease:Power4.easeInOut , stagger:0.1})
-        gsap.to('#quitFadeLeft', {duration: 0.2 ,x:'-100', opacity:0, ease:Power4.easeInOut , stagger:0.1})
-        gsap.to('#quitFadeRight', {duration: 0.2 ,x:'100', opacity:0, ease:Power4.easeInOut , stagger:0.1})
+        animateElementsOut()
 
         setTimeout(() => {
-            window.location = e.target.href; 
-        }, 1000);
+            history.push(`/project/${e.target.href.split('/').pop()}`)
+        },( animOutTimeline.duration()*1000) + 300);
     }
 
     return (
@@ -55,14 +54,13 @@ const ProjectCard = ({animationOrder, project}) => {
                     backgroundBlendMode: "multiply",
                 }}
                 >
-                {/* <LazzyLoadImage imageUrl={imgs[1]} /> */}
                     <div className={styles.ullinkwrap}>
                         <ul >
                             {technologies.map((item, index) => {
                                 return <li key={index} style={{"--animation-order": 8 + index}} >{item}</li>;
                             })}
                         </ul>
-                        <Link to={`/project/${_id}`} onClick={(e) => animateElementsOut(e)}>...more</Link>
+                        <Link to={`/project/${_id}`} onClick={(e) => handleClick(e)}>...more</Link>
                     </div>
                 </div>
                 <Ribbon title={status} />

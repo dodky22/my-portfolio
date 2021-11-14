@@ -11,8 +11,11 @@ import ContactPage from "./pages/ContactPage.jsx";
 import ProjectPage from "./pages/ProjectPage.jsx";
 import LoginPage from "./pages/LoginPage.jsx";
 import RegisterPage from "./pages/RegisterPage.jsx";
+import Page404 from "./pages/Page404.jsx";
+
 import ProjectListPage from "./pages/admin/ProjectListPage.jsx";
 import ProjectEditPage from "./pages/admin/ProjectEditPage.jsx";
+
 
 import styled from 'styled-components'
 
@@ -20,8 +23,8 @@ const App = () => {
   return (
     <div className="App">
       <LoadingBar/> 
+      <Header />
       <Container>
-        <Header />
         <Switch >
               <Route path="/" exact component={HomePage}/>
               <Route path="/portfolio" exact component={PortfolioPage}/>
@@ -31,6 +34,7 @@ const App = () => {
               <Route path="/jm-register" exact component={RegisterPage}/>
               <Route path="/admin/projects" exact component={ProjectListPage}/>
               <Route path="/admin/project/:id/edit" exact component={ProjectEditPage}/>
+              <Route component={Page404}/>
         </Switch>
         <Logout />
       </Container>
@@ -45,7 +49,7 @@ const Container = styled.div`
   min-height:100vh;
   height:100%;
   @media (max-width: 768px) {
-    padding: 0px 50px;
+    padding: 0px 70px;
   }
   @media (max-width: 425px) {
     padding: 0px 25px;

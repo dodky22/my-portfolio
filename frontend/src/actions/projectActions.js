@@ -16,11 +16,11 @@ export const listProjects = () => async(dispatch) => {
     }
 }
 
-export const singleProject = (id) => async(dispatch) => {
+export const singleProject = (slug) => async(dispatch) => {
     try {
         dispatch({type: PROJECTS_DETAILS_REQUEST})
 
-        const {data} = await axios.get(`/api/projects/${id}`)
+        const {data} = await axios.get(`/api/projects/${slug}`)
 
         dispatch({type: PROJECTS_DETAILS_SUCCESS, payload: data})
 

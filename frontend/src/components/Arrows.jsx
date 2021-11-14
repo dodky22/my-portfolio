@@ -2,15 +2,14 @@ import React,{useEffect,useRef} from 'react'
 import {Link} from 'react-router-dom'
 import {useLocation, useHistory} from 'react-router-dom'
 
-import { gsap, Power3, Power4} from 'gsap'
+import { gsap, Power4} from 'gsap'
+import {animateElementsOut, animOutTimeline} from '../animationHelpers/gsapHelpers.js'
 
 import styles from '../css/ArrowsStyles.module.css'
 
 const Arrows = ({linkRight, labelRight, labelLeft, linkLeft}) => {
     const location = useLocation()
     const history = useHistory()
-
-    let animateElementsOut = gsap.timeline({paused:true, reversed:true})
 
     let arrowLeftTl = gsap.timeline({paused:true, reversed:true})
     let arrowRightTl = gsap.timeline({paused:true, reversed:true})
@@ -24,23 +23,17 @@ const Arrows = ({linkRight, labelRight, labelLeft, linkLeft}) => {
 
     useEffect(() => {
         if(arrowRight.current !== null) {
-            arrowRightTl.from(arrowRight, {duration:0.3, x:'1000', ease: Power3.easeInOut, delay:0.7})
+            arrowRightTl.from(arrowRight, {duration:0.3, x:'1000', ease: Power4.easeInOut, delay:0.7})
             arrowRightTl.play()
-            arrowclickRightTl.to(arrowRightSpan,{duration:0.1, x:'100', opacity:0, ease: Power3.easeInOut}, 'start')
-                            .to(arrowRight, {duration:0.1, x:'1000', ease: Power3.easeInOut},'-=0.1')
+            arrowclickRightTl.to(arrowRightSpan,{duration:0.1, x:'100', opacity:0, ease: Power4.easeInOut}, 'start')
+                            .to(arrowRight, {duration:0.1, x:'1000', ease: Power4.easeInOut},'-=0.1')
         } 
         if(arrowLeft.current !== null) {
-            arrowLeftTl.from(arrowLeft, {duration:0.3, x:'-1000', ease: Power3.easeInOut, delay:0.7})
+            arrowLeftTl.from(arrowLeft, {duration:0.3, x:'-1000', ease: Power4.easeInOut, delay:0.7})
             arrowLeftTl.play()
-            arrowclickLeftTl.to(arrowLeftSpan,{duration:0.1, x:'-100', opacity:0, ease: Power3.easeInOut}, 'start')
-                    .to(arrowLeft, {duration:0.1, x:'-1000', ease: Power3.easeInOut},'-=0.1')
+            arrowclickLeftTl.to(arrowLeftSpan,{duration:0.1, x:'-100', opacity:0, ease: Power4.easeInOut}, 'start')
+                    .to(arrowLeft, {duration:0.1, x:'-1000', ease: Power4.easeInOut},'-=0.1')
         }
-        animateElementsOut.to('#quitFadeUp', {duration: 0.2 ,y:'-100', opacity:0, ease:Power3.easeInOut , stagger:0.1}, 'start')
-                        .to('#quitFadeDown', {duration: 0.2 ,y:'100', opacity:0, ease:Power3.easeInOut , stagger:0.1}, 'start')
-                        .to('#quitFadeLeft', {duration: 0.2 ,x:'-100', opacity:0, ease:Power3.easeInOut , stagger:0.1}, 'start')
-                        .to('#quitFadeRight', {duration: 0.2 ,x:'100', opacity:0, ease:Power3.easeInOut , stagger:0.1}, 'start')
-                        .to('#load', {duration: 0.5 , scaleX: 1, ease:Power4.easeInOut}, 'start')
-                        .to('#load', {duration: 0.5 , scaleX: 0, transformOrigin: 'right bottom',  ease:Power4.easeInOut}, 'start+=0.5')
       //   eslint-disable-next-line
     }, [])
 
@@ -49,22 +42,13 @@ const Arrows = ({linkRight, labelRight, labelLeft, linkLeft}) => {
         
         arrowclickLeftTl.play()
         arrowclickRightTl.play()
-        animateElementsOut.play()
+        animateElementsOut()
 
         setTimeout(() => {
-            window.location = e.target.href
-        }, animateElementsOut.duration() * 1000 + 500 );  
+            history.push(`/${e.target.href.split('/').pop()}`)
+        }, animOutTimeline.duration() * 1000 + 300 );  
     }
-// asdfsadfsa
-// dfsafsadfsdf
-// sdaf
-// asfsa
-// fsa
-// f
-// ads
-// fs
-// fd
-// sdaf
+
     return (
         <>
             {location.pathname === '/contact' ? null : (
