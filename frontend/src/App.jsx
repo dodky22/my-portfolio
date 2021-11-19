@@ -52,7 +52,7 @@ const Container = styled.div`
     padding: 0px 70px;
   }
   @media (max-width: 425px) {
-    padding: 0px 25px;
+    padding: 0px 40px;
   }
 `
 

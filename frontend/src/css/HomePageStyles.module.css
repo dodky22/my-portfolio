@@ -87,6 +87,7 @@
   white-space: nowrap; /* Keeps the content on a single line */
   margin: 3px 0px;
   animation: typing 1.25s steps(40, end) forwards, blink-caret 0.75s step-end 1;
+  font-size: 14px;
 }
 .typewriter.mobile_title .home_heading_2 {
   animation-delay: 0.75s;

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import {Link, useHistory} from 'react-router-dom'
 
 import Ribbon from '../components/Ribbon'
@@ -12,6 +12,12 @@ const ProjectCard = ({animationOrder, project}) => {
     let history = useHistory()
 
     const { name, technologies, imgs, status, _id } = project;
+
+    useEffect(() => {
+        imgs && imgs.forEach(img => {
+            new Image().src = img;
+        })
+    }, [imgs])
 
     const handleClick = (e) => {
         e.preventDefault()

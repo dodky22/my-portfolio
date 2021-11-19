@@ -3,7 +3,7 @@ import { useFormik } from 'formik';
 import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios'
 
-// import {updateProject} from '../actions/projectActions'
+import {updateProject} from '../actions/projectActions'
 import {PROJECTS_UPDATE_RESET, PROJECTS_DETAILS_RESET} from '../constants/projectConstants'
 
 import Loader from '../components/Loader'
@@ -14,7 +14,6 @@ import styles from '../css/AdminStyles.module.css'
    const errors = {};
 //    if (!values.name) {
 //      errors.name = 'Required';
-//    }
 //    } else if (values.firstName.length < 5) {
 //      errors.firstName = 'Must be 5 characters or more';
 //    }else if (values.firstName.length > 30){
@@ -54,17 +53,17 @@ import styles from '../css/AdminStyles.module.css'
      },
      validate,
      onSubmit: values => {
-        // dispatch(updateProject({
-        //     _id: projectId,
-        //     name: values.name,
-        //     shortDesc: values.shortDesc,
-        //     url: values.url,
-        //     codeUrl: values.codeUrl,
-        //     description: values.description,
-        //     status: values.status,
-        //     technologies: values.technologies,
-        //     imgs: images.length !== 0 ? images : project.imgs
-        //     }))
+        dispatch(updateProject({
+            _id: projectId,
+            name: values.name,
+            shortDesc: values.shortDesc,
+            url: values.url,
+            codeUrl: values.codeUrl,
+            description: values.description,
+            status: values.status,
+            technologies: values.technologies.toString().toUpperCase().split(','),
+            imgs: images.length !== 0 ? images : project.imgs
+            }))
      }
     });    
 

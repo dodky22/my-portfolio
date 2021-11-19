@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
@@ -38,8 +38,8 @@ const ImageSlider = ({images}) => {
     speed: 300,
     slidesToShow: 1,
     slidesToScroll: 1,
-    // autoplay: true,
-    // autoplaySpeed: 3000,
+    autoplay: true,
+    autoplaySpeed: 3000,
     adaptiveHeight: true,
     cssEase: "cubic-bezier(0.05, 0.65, 0.18, 1)",
     pauseOnHover: true,
@@ -48,6 +48,12 @@ const ImageSlider = ({images}) => {
     nextArrow: <SampleNextArrow customClass={"my_next_arr"}/>,
     prevArrow: <SamplePrevArrow customClass={"my_prev_arr"}/>
   };
+
+  useEffect(() => {
+    images && images.forEach(img => {
+        new Image().src = img;
+    })
+}, [images])
 
 
   return (
