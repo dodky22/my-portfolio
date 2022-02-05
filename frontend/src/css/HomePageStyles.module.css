@@ -205,9 +205,9 @@
   z-index: 100;
   position: fixed;
   left: 0;
-  top: calc(50% - (150px / 2));
+  top: calc(50% - (165px / 2));
   width: 55px;
-  height: 150px;
+  height: 165px;
 }
 
 .social_links > ul {
@@ -265,17 +265,8 @@
   text-indent: -9999em;
 }
 .social_links .CV span {
-  text-indent: unset;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: none;
-  font-weight: 900;
-  text-shadow: none;
-  font-size: 18px;
-  line-height: 1;
-  position: relative;
-  top: 2px;
+  background: url('../images/CV.svg') no-repeat 0 50%;
+  background-size: 100% auto;
 }
 .social_links .CV:hover,
 .social_links .CV:hover span,
@@ -291,15 +282,15 @@
 }
 @media (max-width: 768px) {
   .social_links {
-    bottom: 35px;
-    width: 100%;
+    bottom: 0px;
+    width: 165px;
     height: auto;
     top: auto;
     left: 0;
     text-align: left;
   }
   .social_links ul {
-    width: 110px !important;
+    width: 165px !important;
   }
   .social_links ul li {
     display: inline-block;
@@ -309,12 +300,15 @@
     width: 50px !important;
     left: 10px !important;
   }
-  .social_links ul li a {
+  .social_links ul li:not(:first-child) a {
     padding-left: 0px !important;
     margin-left: 0px !important;
   }
-  .social_links ul li a:hover {
-    padding-bottom: 10px !important;
+  .social_links span {
+    line-height: 1;
+  }
+  .social_links .CV span {
+    height: 35px !important;
   }
 }
 /*
