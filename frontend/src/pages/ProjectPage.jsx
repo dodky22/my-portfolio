@@ -27,7 +27,7 @@ const ProjectPage = ({match}) => {
     const {shortDesc, name, description, technologies, codeUrl, url, imgs} = project
 
     useEffect(() => {
-        dispatch(singleProject(match.params.id))
+        dispatch(singleProject(match.params.slug))
     }, [dispatch, match])
 
     useEffect(() => {
@@ -37,7 +37,6 @@ const ProjectPage = ({match}) => {
         gsap.from('.singlePortfolioEnterDown', {duration: 0.5, y: '-20', opacity:0, ease:Power3.easeInOut, stagger: 0.1})
     }, [technologies, tl])
 
-    
     return (
         <>
         <Meta title={`${name} | ${shortDesc} | Jozef Müller`} />
@@ -52,12 +51,12 @@ const ProjectPage = ({match}) => {
                     </div>
                     <p id="quitFadeUp"  >{shortDesc}</p>
                     <div  id="quitFadeUp" className={`${styles.single_item_buttons} singlePortfolioEnterDown`}>
-                        <AwesomeButton className={styles.single_item_button} type="primary" href={url} >
-                            Visit the website
+                        <AwesomeButton className={styles.single_item_button} ripple type="primary" href={url} target="_blank" >
+                            <span style={{fontWeight:900, userSelect: 'none'}}>Visit the website</span>
                         </AwesomeButton>
                         {codeUrl === "-" ? ( <button className={styles.single_item_button_disabled} type="primary" disabled>
                             Code
-                        </button>): ( <AwesomeButton className={styles.single_item_button} type="primary" href={codeUrl}>
+                        </button>): ( <AwesomeButton className={styles.single_item_button} ripple type="primary" href={codeUrl}>
                             Code
                         </AwesomeButton>)  }    
                     </div>
@@ -65,12 +64,12 @@ const ProjectPage = ({match}) => {
                     <h2 id="quitFadeDown" className={`${styles.single_item_about} singlePortfolioEnterDown`} >About</h2>
                     <Separator />
                     <p id="quitFadeDown" className="singlePortfolioEnterDown">{description}</p>
-                    <h2 id="quitFadeDown" className={`${styles.single_item_tech} singlePortfolioEnterDown`}>Tech</h2>
-                    <h3 id="quitFadeDown" className="singlePortfolioEnterDown">Technologies i used while working on this project</h3>
+                    <h2 id="quitFadeDown" className={`${styles.single_item_tech} singlePortfolioEnterDown`}>Technologies</h2>
+                    <h3 id="quitFadeDown" className="singlePortfolioEnterDown">Technologies i was using while working on this project</h3>
                     <Separator />
                     <ul className={styles.tech_list_items} ref={el => (techul = el)}>
                         {technologies && technologies.map((item, id) => {
-                        return <li id="quitFadeLeft" key={id}>{item}</li>;
+                            return <li id="quitFadeLeft" key={id}>{item}</li>;
                         })}
                     </ul>
                     <Separator />

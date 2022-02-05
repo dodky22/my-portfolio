@@ -2,6 +2,8 @@ import React, {useEffect} from 'react'
 
 import {useDispatch, useSelector} from 'react-redux'
 import {listProjects} from '../actions/projectActions'
+import {FILTER_PROJECTS_RESET} from '../constants/projectConstants'
+
 
 import Separator from '../components/Separator.jsx'
 import ProjectCard from '../components/ProjectCard.jsx'
@@ -16,7 +18,6 @@ import styled from 'styled-components'
 import styles from '../css/PortfolioPageStyles.module.css'
 
 const PortfolioPage = () => {
-
     const dispatch = useDispatch()
 
     const projectList = useSelector(state => state.projectList)
@@ -26,7 +27,13 @@ const PortfolioPage = () => {
     const {error:filterError, projects:filteredProjects, loading: filterLoading} = filterProjects
 
     useEffect(() => {
-        dispatch(listProjects())
+        if(projects.length === 0){
+            dispatch(listProjects())
+        }
+        return () => {
+            dispatch({type: FILTER_PROJECTS_RESET})
+        }
+        // eslint-disable-next-line
     }, [dispatch])
 
     return (

@@ -20,6 +20,7 @@ const SocialLinks = () => {
                 <li id="quitFadeLeft"><small>Follow me</small></li>
                 <li id="quitFadeLeft"><a href="https://github.com/dodky22" className={styles.github} target="_blank" rel="noreferrer" title="Follow me on GitHub"><span>Follow me on GitHub</span></a></li>
                 <li id="quitFadeLeft"><a href="https://linkedin.com/in/jozef-müller" className={styles.linkedin} target="_blank" rel="noreferrer" title="Follow me on LinkedIn"><span>Follow me on LinkedIn</span></a></li>
+                <li id="quitFadeLeft"><a href="\Jozef_Müller_en_CV.pdf" className={styles.CV} target="_blank" rel="noreferrer" title="My CV"><span>CV</span></a></li>
             </ul>
         </div>
     )

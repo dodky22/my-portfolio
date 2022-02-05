@@ -28,7 +28,7 @@ const ContactPage = () => {
             <Separator />
             <Text id="quitFadeUp" ref={el => (text = el)}>
                 If you want to get in touch and talk please fill up this form or contact me via email at: 
-                <a href="mailto:dodkymull@gmail.com" className={styles.homepage_link}>
+                <a href="mailto:dodkymull@gmail.com" className={styles.contactpage_link}>
                     <strong> dodkymull@gmail.com</strong>
                 </a>
             </Text>

@@ -198,6 +198,7 @@
   justify-content: center;
   align-items: center;
   padding: 0;
+  margin-top: 0px;
 }
 
 .hover_info > .ullinkwrap > ul li {
@@ -219,7 +220,7 @@
   color: rgb(202, 202, 202);
   width: 100px;
   background-color: #252525;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.05, 0.65, 0.18, 1) 25;
   border-radius: 3px;
   box-shadow: 1px 3px 0 rgb(0 0 0 / 25%);
   position: relative;
@@ -227,15 +228,21 @@
   font-weight: 300;
   border-radius: 3px;
   box-shadow: 1px 3px 0 rgb(0 0 0 / 25%);
+  position: relative;
+  padding-bottom: 3px;
 }
 
 .hover_info a::after {
   display: block;
   content: '';
   border-bottom: solid 1px #ff9307;
-  transform: scaleX(0);
-  padding-top: 3px;
-  transition: transform 300ms ease-in-out;
+  border-top: solid 1px #ff9307;
+  transition: all 325ms cubic-bezier(0.05, 0.65, 0.18, 1);
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  width: 0;
+  height: 100%;
 }
 .hover_info a::before {
   position: absolute;
@@ -246,16 +253,22 @@
   width: 100%;
   background: #1a1a1a;
   transform: scaleX(0);
-  transition: transform 250ms ease-in-out;
+  transition: all 325ms cubic-bezier(0.05, 0.65, 0.18, 1);
   transform-origin: 100% 50%;
   z-index: -1;
   border-radius: 3px;
 }
 
-.hover_info a:hover:after,
 .hover_info a:hover:before {
   transform: scaleX(1);
 }
+.hover_info a:hover:after {
+  width: 100%;
+  left: 0;
+}
+/* .hover_info a:hover {
+  border-top: 1px solid #fff;
+} */
 
 .main_info:hover .hover_info {
   transform: translateY(0);
@@ -319,12 +332,13 @@
 }
 
 .portfolio_link {
+  position: relative;
   padding: 0.25rem 0 0 0;
   color: #999;
   width: 100%;
   max-width: 100px;
   background-color: #252525;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.05, 0.65, 0.18, 1);
   border-radius: 3px;
   box-shadow: 1px 3px 0 rgb(0 0 0 / 25%);
   position: relative;
@@ -342,7 +356,8 @@
   animation-duration: 350ms;
   animation-delay: calc(var(--animation-order) * 100ms);
   animation-fill-mode: both;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: cubic-bezier(0.05, 0.65, 0.18, 1);
+  padding-bottom: 5px;
 }
 
 .portfolio_link:hover {
@@ -351,11 +366,15 @@
 
 .portfolio_link::after {
   display: block;
+  position: absolute;
+  top: 0;
   content: '';
   border-bottom: solid 1px #ff9307;
-  transform: scaleX(0);
-  padding-top: 5px;
-  transition: transform 300ms ease-in-out;
+  border-top: solid 1px #ff9307;
+  transition: all 300ms cubic-bezier(0.05, 0.65, 0.18, 1);
+  width: 0;
+  left: 50%;
+  height: 100%;
 }
 
 .portfolio_link::before {
@@ -367,16 +386,19 @@
   width: 100%;
   background: #1a1a1a;
   transform: scaleX(0);
-  transition: transform 250ms ease-in-out;
+  transition: transform 250ms cubic-bezier(0.05, 0.65, 0.18, 1);
   transform-origin: 100% 50%;
   z-index: -1;
   border-radius: 3px;
   border: 1px solid #1b1b1b;
 }
 
-.portfolio_link:hover:after,
 .portfolio_link:hover:before {
   transform: scaleX(1);
+}
+.portfolio_link:hover:after {
+  width: 100%;
+  left: 0;
 }
 
 .filterState {
@@ -436,9 +458,13 @@
   color: rgb(202, 202, 202);
 }
 
-.activeFilter::before,
-.activeFilter::after {
+.activeFilter::before {
   transform: scale(1);
+}
+
+.activeFilter::after {
+  width: 100%;
+  left: 0;
 }
 
 /*

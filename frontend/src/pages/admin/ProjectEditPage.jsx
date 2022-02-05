@@ -11,6 +11,7 @@ import {singleProject} from '../../actions/projectActions'
 import styles from '../../css/AdminStyles.module.css'
 
 const ProjectEditPage = ({match, history}) => {
+    const projectSlug = match.params.slug
     const projectId = match.params.id
 
     const dispatch = useDispatch()
@@ -28,11 +29,10 @@ const ProjectEditPage = ({match, history}) => {
         if(!userInfo || !userInfo.isAdmin ){
             history.push('/jm-login')
         }
-
-        if(project && project._id === projectId){
+        if(project && project.slug === projectSlug){
             return
         }else{
-            dispatch(singleProject(projectId))
+            dispatch(singleProject(projectSlug))
         }
        // eslint-disable-next-line 
     }, [userInfo])

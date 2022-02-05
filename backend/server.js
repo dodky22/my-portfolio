@@ -23,7 +23,6 @@ app.use('/api/users', UserRoutes)
 app.use('/api/upload', UploadRoutes)
 app.use("/api/contact", ContactRoutes);
 
-
 // uploads isnt available by default so we have to make it static so it can be loaded in a browser
 const __dirname = path.resolve()
 // __dirname points to current directory (not evailable with ES modules only with common JS(require syntax))
@@ -44,7 +43,7 @@ if(process.env.NODE_ENV === 'production'){
 app.use(notFound)
 app.use(errorHandler)
 
-// port from env or if not there use 5000
+//PORT from env or if not there use 5000
 const PORT = process.env.PORT || 5000
 
 app.listen(PORT, console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`))

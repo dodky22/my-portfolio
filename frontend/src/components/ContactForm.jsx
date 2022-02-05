@@ -146,7 +146,7 @@ import Message from '../components/Message'
         </div>
 
         <div id="quitFadeDown" className={styles.btnWrap} ref={el => (button = el)}>
-          <AwesomeButton type="primary">SEND</AwesomeButton>
+          <AwesomeButton type="primary" ripple><span style={{fontWeight:900, userSelect: 'none'}} >SEND</span></AwesomeButton>
         </div>    
      </form>
    );

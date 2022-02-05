@@ -1,10 +1,8 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import Slider from "react-slick";
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
-import LazzyLoadImage from '../components/LazzyLoadImage'
 
 const SampleNextArrow = ({ customClass, style, onClick }) => {
   return (
@@ -34,7 +32,6 @@ const ImageSlider = ({images}) => {
   const settings = {
     dots: true,
     infinite: true,
-    lazyLoad: true,
     speed: 300,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -49,13 +46,6 @@ const ImageSlider = ({images}) => {
     prevArrow: <SamplePrevArrow customClass={"my_prev_arr"}/>
   };
 
-  useEffect(() => {
-    images && images.forEach(img => {
-        new Image().src = img;
-    })
-}, [images])
-
-
   return (
         <div style={{marginTop:'20px'}} id="quitFadeUp">
           <div style={{height: '35px',padding: '2px', background: '#1b1b1b', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
@@ -63,8 +53,7 @@ const ImageSlider = ({images}) => {
           </div>
           <Slider {...settings}>
             { images && images.map((el,id) => (
-                // <img key={id} src={el} alt="" width="100%" height="100%" style={{marginBottom: '-25px'}} />
-                <LazzyLoadImage imageUrl={el} key={id}/>
+                <img key={id} src={el} alt="" width="100%" height="100%" style={{marginBottom: '-25px'}} />
             ))}
           </Slider>
         </div>   

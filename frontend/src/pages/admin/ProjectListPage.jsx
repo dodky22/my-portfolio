@@ -32,7 +32,7 @@ const ProjectListPage = ({history, match}) => {
         }
 
         if(successCreate){
-            history.push(`/admin/project/${createdProject._id}/edit`)
+            history.push(`/admin/project/${createdProject.slug}/edit`)
         }else{
             dispatch(listProjects())
         }
@@ -70,9 +70,9 @@ const ProjectListPage = ({history, match}) => {
                     {projects && projects.map(project => (
                         <tr key={project._id}>
                             <td>{project._id}</td>
-                            <td className={styles.nameLink}><Link to={`/project/${project._id}`} >{project.name}</Link></td>
+                            <td className={styles.nameLink}><Link to={`/project/${project.slug}`}>{project.name}</Link></td>
                             <td>
-                                <Link to={`/admin/project/${project._id}/edit`}>
+                                <Link to={`/admin/project/${project.slug}/${project._id}/edit`}>
                                     <button>
                                         <i className='fas fa-edit'/>
                                     </button>

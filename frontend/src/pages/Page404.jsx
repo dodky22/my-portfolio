@@ -11,7 +11,7 @@ const Page404 = () => {
         <section style={{minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
             <div className={styles.errorpagecontainer}>
                 <h1 className={styles.error_page}>404</h1>
-                <h3>PAGE NOT FOUND :(</h3>
+                <h3>Sorry, page not found :(</h3>
             </div>
         </section>
         </>

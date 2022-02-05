@@ -29,11 +29,12 @@ const App = () => {
               <Route path="/" exact component={HomePage}/>
               <Route path="/portfolio" exact component={PortfolioPage}/>
               <Route path="/contact" exact component={ContactPage}/>
-              <Route path="/project/:id" exact component={ProjectPage}/>
+              {/* <Route path="/project/:id" exact component={ProjectPage}/> */}
+              <Route path="/project/:slug" exact component={ProjectPage}/>
               <Route path="/jm-login" exact component={LoginPage}/>
               <Route path="/jm-register" exact component={RegisterPage}/>
               <Route path="/admin/projects" exact component={ProjectListPage}/>
-              <Route path="/admin/project/:id/edit" exact component={ProjectEditPage}/>
+              <Route path="/admin/project/:slug/:id/edit" exact component={ProjectEditPage}/>
               <Route component={Page404}/>
         </Switch>
         <Logout />
@@ -51,8 +52,14 @@ const Container = styled.div`
   @media (max-width: 768px) {
     padding: 0px 70px;
   }
-  @media (max-width: 425px) {
-    padding: 0px 40px;
+  @media (max-width: 500px) {
+    padding: 0px 30px;
+  }
+  @media (max-width: 400px) {
+    padding: 0px 20px;
+  }
+  @media (max-width: 350px) {
+    padding: 0px 15px;
   }
 `
 

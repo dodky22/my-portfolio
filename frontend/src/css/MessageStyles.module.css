@@ -4,9 +4,26 @@
   position: relative;
   max-width: 600px;
   margin: 0px auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
   transform: translateY(100%);
   animation: slide-status 250ms forwards;
   animation-timing-function: ease-in-out;
+}
+
+.closeMessage {
+  position: absolute;
+  top: 3px;
+  right: 7px;
+}
+
+.closeMessage:hover {
+  cursor: pointer;
+  color: red;
 }
 
 @keyframes slide-status {

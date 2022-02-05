@@ -24,6 +24,20 @@ export const getProjectById = asyncHandler(async(req,res) => {
     }
 })
 
+// @desc FETCH SINGLE PROJECT
+// @route GET /api/projects/:slug
+// @access PUBLIC
+export const getProjectBySlug = asyncHandler(async(req,res) => {
+    const project = await Project.findOne({slug: req.params.slug})
+
+    if(project){
+        res.json(project)
+    }else{
+        res.status(404)
+        throw new Error('Project not found, sorry')
+    }
+})
+
 
 // @desc CREATE PROJECT
 // @route POST /api/projects
@@ -37,7 +51,7 @@ export const createProject = asyncHandler(async(req,res) => {
         description: 'Sample description',
         technologies: ['tech1', 'tech2', 'tech3'],
         status: 'Sample status',
-        imgs: ['/uploaded_images/bookstore_1']
+        imgs: ['/uploaded_images/bookstore_1'],
     })
 
     const createdProject = await project.save()

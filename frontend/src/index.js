@@ -8,14 +8,35 @@ import reportWebVitals from './reportWebVitals';
 
 import { BrowserRouter as Router } from "react-router-dom";
 
-ReactDOM.render(
-  <Provider store={store}>
-    <Router>
-      <App />
-    </Router>
-  </Provider>,
-  document.getElementById('root')
-);
+// ReactDOM.render(
+//   <Provider store={store}>
+//     <Router>
+//       <App />
+//     </Router>
+//   </Provider>,
+//   document.getElementById('root')
+// );
+
+//https://web.dev/prerender-with-react-snap/
+const rootElement = document.getElementById("root");
+
+if (rootElement.hasChildNodes()) {
+  ReactDOM.hydrate(
+    <Provider store={store}>
+      <Router>
+        <App />
+      </Router>
+    </Provider>
+  , rootElement);
+} else {
+  ReactDOM.render(
+    <Provider store={store}>
+      <Router>
+        <App />
+      </Router>
+    </Provider>
+  , rootElement);
+}
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

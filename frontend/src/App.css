@@ -27,9 +27,9 @@ body::-webkit-scrollbar-thumb {
   bottom: -3px !important;
 }
 
-.aws-btn .aws-btn__content > span:nth-child(1) {
+/* .aws-btn .aws-btn__content > span:nth-child(1) {
   text-shadow: 2px 2px 0px rgb(0 0 0 / 30%);
-}
+} */
 
 .my_slick_dots {
   display: flex !important;
@@ -333,9 +333,9 @@ body::-webkit-scrollbar-thumb {
   .slick-slider {
     min-height: 100% !important;
   }
-  .aws-btn .aws-btn__content > span:nth-child(1) span {
+  /* .aws-btn .aws-btn__content > span:nth-child(1) span {
     font-weight: 400 !important;
-  }
+  } */
   .aws-btn .aws-btn__content > span:nth-child(1) {
     text-shadow: none !important;
     text-transform: uppercase !important;

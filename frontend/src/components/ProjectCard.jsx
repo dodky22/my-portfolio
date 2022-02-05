@@ -11,7 +11,7 @@ import styles from '../css/PortfolioPageStyles.module.css'
 const ProjectCard = ({animationOrder, project}) => {
     let history = useHistory()
 
-    const { name, technologies, imgs, status, _id } = project;
+    const { name, technologies, imgs, status, slug } = project;
 
     useEffect(() => {
         imgs && imgs.forEach(img => {
@@ -28,7 +28,6 @@ const ProjectCard = ({animationOrder, project}) => {
             history.push(`/project/${e.target.href.split('/').pop()}`)
         },( animOutTimeline.duration()*1000) + 300);
     }
-
     return (
         <div className={styles.item_card} style={{"--animation-order": 1 + animationOrder}}>
             <div className={styles.item_card_header}>
@@ -66,7 +65,7 @@ const ProjectCard = ({animationOrder, project}) => {
                                 return <li key={index} style={{"--animation-order": 8 + index}} >{item}</li>;
                             })}
                         </ul>
-                        <Link to={`/project/${_id}`} onClick={(e) => handleClick(e)}>...more</Link>
+                        <Link to={`/project/${slug}`} onClick={(e) => handleClick(e)}>...more</Link>
                     </div>
                 </div>
                 <Ribbon title={status} />

@@ -1,8 +1,6 @@
 import mongoose from 'mongoose'
 
-// import slug from 'mongoose-slug-generator'
-
-// mongoose.plugin(slug);
+import slugify from 'slugify'
 
 const projectSchema = new mongoose.Schema({
     name: {
@@ -42,7 +40,6 @@ const projectSchema = new mongoose.Schema({
     },
     slug: { 
         type: String,
-        slug:"name",
         unique: true 
     },
     imgs: {
@@ -54,6 +51,13 @@ const projectSchema = new mongoose.Schema({
         default: Date.now,
     },
 });
+
+projectSchema.pre('save', function(next) {
+  this.slug = slugify(this.name);
+  next();
+});
+
+
 const Project = mongoose.model('Project', projectSchema);
 
 export default Project

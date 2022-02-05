@@ -140,10 +140,10 @@ const HomePage = () => {
           {/* BUTTONS */}
           <div id="quitFadeDown"  className={`${styles.buttons_container}`} ref={el => (buttons = el)} >
             <Link to="/portfolio" onClick={(e) => {handleHomeBtnClick(e)}}>
-                <AwesomeButton type="primary"><span style={{fontWeight:500, userSelect: 'none'}}>PORFOLIO</span></AwesomeButton>
+                <AwesomeButton type="primary" ripple><span style={{fontWeight:900, userSelect: 'none'}}>PORFOLIO</span></AwesomeButton>
             </Link>
             <Link to="/contact" onClick={(e) => {handleHomeBtnClick(e)}}>
-                <AwesomeButton type="primary" ><span style={{fontWeight:500, userSelect: 'none'}}>CONTACT</span></AwesomeButton>
+                <AwesomeButton type="primary" ripple><span style={{fontWeight:900, userSelect: 'none'}}>CONTACT</span></AwesomeButton>
             </Link>
           </div>
           {/* ENDOF BUTTONS */}
