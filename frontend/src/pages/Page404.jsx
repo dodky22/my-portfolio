@@ -7,7 +7,7 @@ import Meta from '../components/Meta.jsx'
 const Page404 = () => {
     return (
         <>
-        <Meta title='Page not found | Jozef Müller'/>      
+        <Meta title='404 Page not found | Jozef Müller'/>      
         <section style={{minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center'}}>
             <div className={styles.errorpagecontainer}>
                 <h1 className={styles.error_page}>404</h1>
