@@ -62,6 +62,8 @@
   "reactSnap": {
     "inlineCss": true,
     "exclude" : ["/Jozef_Müller_en_CV.pdf", "/Jozef_M%C3%BCller_en_CV.pdf"],
-    "include" : ["/jm-login", "/jm-register"]
+    "include" : ["/jm-login", "/jm-register", "/project/portfolio-website", "/project/weather-app",
+      "/project/miluron","/project/book-store","/project/photography-portfolio",
+      "/project/tetris","/project/trumpeter","/project/my-biomin","/project/pmb","/project/prerio"]
   }
 }
