@@ -60,6 +60,8 @@
     "postcss": "^7.0.36"
   },
   "reactSnap": {
-    "inlineCss": true
+    "inlineCss": true,
+    "exclude" : ["/Jozef_Müller_en_CV.pdf", "/Jozef_M%C3%BCller_en_CV.pdf"],
+    "include" : ["/jm-login", "/jm-register"]
   }
 }
