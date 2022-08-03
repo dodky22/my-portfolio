@@ -20,7 +20,6 @@ import styles from '../css/AdminStyles.module.css'
 //    }else if (values.firstName.length > 30){
 //      errors.firstName = 'Too long';
 //    }
- 
    return errors
 }
  
