@@ -32,7 +32,7 @@ const ProjectListPage = ({history, match}) => {
         }
 
         if(successCreate){
-            history.push(`/admin/project/${createdProject.slug}/edit`)
+            history.push(`/admin/project/${createdProject.slug}/${createdProject._id}/edit`)
         }else{
             dispatch(listProjects())
         }

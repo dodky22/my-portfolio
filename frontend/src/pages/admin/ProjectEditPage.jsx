@@ -19,9 +19,6 @@ const ProjectEditPage = ({match, history}) => {
     const projectDetails = useSelector(state => state.projectDetails)
     const {loading, error, project} = projectDetails
 
-    const projectUpdate = useSelector(state => state.projectUpdate)
-    const {loading:loadingUpdate, error:errorUpdate} = projectUpdate
-
     const userLogin = useSelector(state => state.userLogin)
     const {userInfo} = userLogin
 
@@ -38,11 +35,11 @@ const ProjectEditPage = ({match, history}) => {
     }, [userInfo])
 
     return (
-        <section className={styles.editSection} >
-           <Link to='/admin/projects'><button className={styles.editBackBtn} >Go back</button></Link>
-           <h1 >Edit project</h1>
-           {loadingUpdate && <Loader />}
-           {errorUpdate && <Message>{errorUpdate}</Message>}
+        <section className={styles.editSection}>
+           <div>
+               <h1>Edit project</h1>
+               <Link to='/admin/projects'><button className={styles.editBackBtn} >Go back</button></Link>
+           </div>
            {loading ? (<Loader /> ): error ? (<Message variant='danger'>{error}</Message>) : (!loading && !error && project._id !== undefined) && (
               <UpdateProjectForm project={project} projectId={projectId} history={history}/>
            )}

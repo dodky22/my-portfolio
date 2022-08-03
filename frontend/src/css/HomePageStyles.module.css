@@ -254,7 +254,8 @@
   background-color: #0077ba;
 }
 .social_links .CV {
-  background-color: #871515;
+  /* background-color: #871515; */
+  background-color: #ff9307; 
 }
 .social_links span {
   display: block;

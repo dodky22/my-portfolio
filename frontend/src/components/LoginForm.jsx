@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom'
 import {useDispatch} from 'react-redux'
 import {login} from '../actions/userActions'
 
-import {gsap, Power3} from 'gsap'
+import {gsap, Power4} from 'gsap'
 import styles from '../css/LoginRegisterStyles.module.css'
  
  const validate = values => {
@@ -29,11 +29,6 @@ import styles from '../css/LoginRegisterStyles.module.css'
   const [passwordShown, setPasswordShown] = useState(false);
 
   let form = useRef(null);
-  let field1 = useRef(null);
-  let field2 = useRef(null);
-  let button = useRef(null);
-  let eye = useRef(null);
-
   
   const dispatch = useDispatch()
 
@@ -42,10 +37,7 @@ import styles from '../css/LoginRegisterStyles.module.css'
   const redirect = location.search ? location.search.split('=')[1] : '/'
 
   useEffect(() => {
-    tl.to(form, {duration:0.5, scale:1, ease: Power3.easeInOut})
-      .staggerTo([field1,field2,button], 1, {x:0 , ease:Power3.easeInOut}, 0.2)
-      .to(eye, {duration: 0.2, opacity: 1, ease:Power3.easeInOut})
-
+    tl.to(form, {duration:1.5, y:0,opacity:1, ease: Power4.easeInOut})
   }, [tl])
 
    const formik = useFormik({
@@ -76,7 +68,6 @@ import styles from '../css/LoginRegisterStyles.module.css'
                     onBlur={formik.handleBlur}
                     value={formik.values.email}
                     placeholder="Email"
-                    ref={el => (field2 = el)}
                 />
                 <span className={styles.line} ></span>
                 {formik.touched.email && formik.errors.email ? (
@@ -92,18 +83,16 @@ import styles from '../css/LoginRegisterStyles.module.css'
                     onBlur={formik.handleBlur}
                     value={formik.values.password}
                     placeholder="Password"
-                    ref={el => (field1 = el)}
                 />
                 <span className={styles.line} ></span>
                 {formik.touched.password && formik.errors.password ? (
                     <span className={styles.loginformerrormsg}>{formik.errors.password}</span>
                 ) : null}
                 <i style={{ color: passwordShown ? '#ff9307' : null, opacity: 0}} className={`fas fa-eye ${styles.password_eye_toogle}`}
-                    ref={el => (eye = el)}
                     onClick={togglePasswordVisiblity} ></i>
             </div>
         </div>
-        <div className={styles.btnWrap} ref={el => (button = el)}>
+        <div className={styles.btnWrap}>
           <AwesomeButton type="primary" >LOGIN</AwesomeButton>
           <p>New account? <Link to={redirect ? `/jm-register?redirect=${redirect}` : '/register'}>Register</Link></p>
         </div>

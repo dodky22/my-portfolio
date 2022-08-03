@@ -10,7 +10,8 @@
 }
 
 .adminprojects > div > h1 {
-  font-weight: 300;
+  font-weight: 400;
+  text-transform: uppercase;
 }
 
 .adminprojects > div > button {
@@ -135,45 +136,54 @@
   display: flex;
   flex-direction: column;
 }
-
-.editSection > h1 {
+.editSection > div{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.editSection > div > h1 {
   text-align: left;
-  font-weight: 300;
-  margin-top: 25px;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-top: 15px;
+  color: rgb(230, 230, 230);
+}
+
+.editSection > div > a{
+  width: fit-content;
 }
 .editBackBtn {
   float: left;
   padding: 10px 15px;
   cursor: pointer;
-  background: white;
-  color: #000;
-  border: 1px solid #000;
-  outline: none;
-  border-radius: 3px;
+  background: rgb(230, 230, 230);
+  outline: 2px solid #000;
+  border: none;
+  font-weight: 400;
+  border-radius: 2px;
+  transition: 325ms all ease-in-out;
 }
 
 .editBackBtn:hover {
-  background: #ccc;
+  background: #353535;
+  color: #ff9307;
+  outline: 2px solid #ff9307;
 }
 
 .projectEditForm {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  background: #fff;
-  border-radius: 10px;
-  padding: 15px;
+  border-radius: 2px;
+  padding: 25px 15px;
+  transition: 325ms all ease-in-out;
+  background: rgb(230, 230, 230);
+  color: #000;
+  outline: 2px solid #000;
+  margin-bottom: 75px;
 }
 
-.projectEditForm > div:first-child {
-  width: calc(50% - 17px);
-  min-width: 200px;
-  margin-right: 12px;
-}
-
-.projectEditForm > div:last-child {
-  width: calc(50% - 17px);
-  min-width: 200px;
+.projectEditForm:hover{
+  outline: 2px solid #ff9307;
 }
 
 .projectEditForm .projectEditFormGroup {
@@ -184,14 +194,16 @@
 }
 
 .projectEditForm .projectEditFormGroup > label {
-  color: #000;
+  color: #353535;
   font-weight: normal;
   text-transform: uppercase;
   font-size: 18px;
+  font-weight: 500;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
+  margin-bottom: 5px;
 }
 
 .projectEditForm .projectEditFormGroup > label > span {
@@ -199,37 +211,52 @@
   text-transform: lowercase;
 }
 
-.projectEditForm .projectEditFormGroup > input {
-  min-height: 40px;
+.projectEditForm .projectEditFormGroup > input,
+.projectEditForm .projectEditFormGroup > select {
+  min-height: 30px;
   height: 100%;
   padding-left: 5px;
-  width: calc(100% - 10px);
   margin: 0;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
+  border: none;
+  outline: 1px solid #000;
+  border-radius: 2px;
+  transition: 325ms all ease-in-out;
 }
-
 .projectEditForm .projectEditFormGroup > textarea {
   padding-left: 5px;
   padding-top: 5px;
   margin: 0;
   margin-bottom: 20px;
+  border: none;
+  outline: 1px solid #000;
+  border-radius: 2px;
+  transition: 325ms all ease-in-out;
 }
-
+.projectEditForm .projectEditFormGroup > input:hover,
+.projectEditForm .projectEditFormGroup > input:focus,
+.projectEditForm .projectEditFormGroup > textarea:focus,
+.projectEditForm .projectEditFormGroup > textarea:hover{
+  outline: 1px solid #ff9307;
+}
 .updateButton {
-  width: calc(100% - 10px);
   padding: 10px 0;
   background: #ff9307;
-  border: none;
-  outline: none;
-  border-radius: 5px;
   cursor: pointer;
-  color: #000;
-  font-weight: normal;
-  border: 1px solid #000;
+  color: #fff;
+  outline: 2px solid #ff9307;
+  border: none;
+  font-weight: 500;
+  width: 100%;
+  max-width: 200px;
+  margin-right: auto;
+  border-radius: 2px;
+  transition: 325ms all ease-in-out;
+  margin-top: 10px;
 }
 
 .updateButton:hover {
-  background: #df8107;
+  background: #353535;
 }
 
 .filegroup {
@@ -240,11 +267,11 @@
   margin-bottom: 25px;
 }
 .filegroup > input {
-  max-width: 125px;
   padding: 0px !important;
   margin: 0 !important;
   height: 30px !important;
   min-height: unset !important;
+  outline: none !important;
 }
 
 @media only screen and (max-width: 700px) {

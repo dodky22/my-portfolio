@@ -16,8 +16,8 @@ export const animateElementsOut = () => {
                 .to('#quitFadeDown', {duration: 0.2 ,y:'100', opacity:0,  stagger:0.1}, 'start')
                 .to('#quitFadeLeft', {duration: 0.2 ,x:'-100', opacity:0,  stagger:0.1}, 'start')
                 .to('#quitFadeRight', {duration: 0.2 ,x:'100', opacity:0,  stagger:0.1}, 'start')
-                .to('#load', {duration: 0.5 , scaleX: 1,}, 'start')
-                .to('#load', {duration: 0.5 , scaleX: 0, transformOrigin: 'right center',},  'start+=0.5')  
+                .to('#load', {duration: 1 , scaleX: 1,}, 'start')
+                .to('#load', {duration: 0.5 , scaleX: 0, transformOrigin: 'right center',},  'start+=0.75')  
                 .to('#homelinkHeader', {duration:0.2, x:'-100', opacity:0}, 'start')
                 .to('#burgerHeader', {duration:0.2, x:'100', opacity:0}, 'start')
 

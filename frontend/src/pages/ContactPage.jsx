@@ -14,7 +14,7 @@ const ContactPage = () => {
     let text = useRef(null);
 
     useEffect(() => {
-        gsap.to(text, {duration: 0.2, x:0, delay: 1})
+        gsap.to(text, {duration: 1, x:0,opacity:1, delay: 1})
     }, [])
 
     return (
@@ -54,7 +54,8 @@ const Text = styled.p`
     font-size: 18px;
     text-align: left;
     color: #cacaca;
-    transform: translateX(-100%);
+    transform: translateX(-30px);
+    opacity:0;
     line-height: 1.4;
     @media (max-width: 480px) {
         font-size: 14px;

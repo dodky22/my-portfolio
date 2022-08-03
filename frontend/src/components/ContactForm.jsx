@@ -49,10 +49,10 @@ import Message from '../components/Message'
   let formtl = gsap.timeline()
 
   useEffect(() => {
-    formtl.to( field1, {duration:0.2, x:0, delay: 1.5})
-          .to( field2, {duration:0.2, x:0})
-          .to( field3, {duration:0.2, x:0})
-          .to( button, {duration:0.2, x:0})
+    formtl.to( field1, {duration:0.2, x:0, opacity:1, delay: 1.5})
+          .to( field2, {duration:0.2, x:0, opacity:1})
+          .to( field3, {duration:0.2, x:0, opacity:1})
+          .to( button, {duration:0.2, x:0, opacity:1})
      // eslint-disable-next-line 
   }, [])
 

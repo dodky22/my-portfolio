@@ -18,9 +18,12 @@ const SocialLinks = () => {
         <div className={styles.social_links}>
             <ul ref={el => (socialLinks = el)}>
                 <li id="quitFadeLeft"><small>Follow me</small></li>
-                <li id="quitFadeLeft"><a href="https://github.com/dodky22" className={styles.github} target="_blank" rel="noreferrer" title="Follow me on GitHub"><span>Follow me on GitHub</span></a></li>
-                <li id="quitFadeLeft"><a href="https://linkedin.com/in/jozef-müller" className={styles.linkedin} target="_blank" rel="noreferrer" title="Follow me on LinkedIn"><span>Follow me on LinkedIn</span></a></li>
-                <li id="quitFadeLeft"><a href="\Jozef_Müller_en_CV.pdf" className={styles.CV} target="_blank" rel="noreferrer" title="My CV"><span>CV</span></a></li>
+                {/* // eslint-disable-next-line */}
+                <li id="quitFadeLeft"><a href="https://github.com/jozefmull" target="_blank" rel="noopener noreferrer"  className={styles.github} title="Follow me on GitHub"><span>Follow me on GitHub</span></a></li>
+                {/* // eslint-disable-next-line */}
+                <li id="quitFadeLeft"><a href="https://linkedin.com/in/jozef-müller" target="_blank" rel="noopener noreferrer" className={styles.linkedin} title="Follow me on LinkedIn"><span>Follow me on LinkedIn</span></a></li>
+                {/* // eslint-disable-next-line */}
+                <li id="quitFadeLeft"><a href="\Jozef_Müller_en_CV.pdf" target="_blank" rel="noopener noreferrer" className={styles.CV} title="My CV"><span>CV</span></a></li>
             </ul>
         </div>
     )

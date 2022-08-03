@@ -45,7 +45,8 @@
   padding-left: 15px;
   margin-top: 20px;
   transition: all 0.5s ease-in-out;
-  transform: translateX(-200%);
+  transform: translateX(-30px);
+  opacity: 0;
 }
 
 .contactfrom > .contactinputWrap > textarea {
@@ -61,8 +62,8 @@
   margin-bottom: 0;
   margin-top: 20px;
   transition: all 0.5s ease-in-out;
-  transform: translateX(-200%);
-}
+  transform: translateX(-30px);
+  opacity: 0;}
 
 .contactfrom > .contactinputWrap > input[type='text']:focus,
 .contactfrom > .contactinputWrap > input[type='email']:focus,
@@ -123,7 +124,8 @@ select:-webkit-autofill:focus {
 }
 
 .contactfrom > .btnWrap {
-  transform: translateX(-100%);
+  transform: translateX(-30px);
+  opacity: 0;
 }
 
 .contactpage_link {

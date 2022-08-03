@@ -63,7 +63,7 @@ const HomePage = () => {
             <div   className={`${styles.desktop_home_p}`}>
                 <div id="quitFadeUp" className={styles.typewriter}>
                     <p  className={styles.home_paragraph}>
-                        I am 24 years old student. Aspiring to become a web developer. I
+                        I am 25 years old graduate. Aspiring to become a frontend developer. I
                         am learning
                     </p>
                 </div>
@@ -79,9 +79,9 @@ const HomePage = () => {
                     <p className={styles.home_paragraph_3}>
                             visit my {" "}
                             <Link to="/portfolio" className={styles.homepage_link}>
-                                <strong>portfolio page. </strong>
+                                <strong>portfolio page.</strong>
                             </Link>
-                            You can contact me via email at:{" "}
+                            {" "}You can contact me via email at:{" "}
                             <a href="mailto:dodkymull@gmail.com" className={styles.homepage_link}>
                                 <strong>dodkymull@gmail.com</strong>
                             </a>  
@@ -100,13 +100,13 @@ const HomePage = () => {
           <div className={`${styles.mobile_home_p}`}>
                 <div id="quitFadeUp" className={styles.typewriter}>
                 <p  className={styles.home_paragraph}>
-                    I am 24 years old student. Aspiring to become a 
+                    I am 25 years old graduate. Aspiring to become a 
                 </p>
                 </div>
                 <br/>
                 <div id="quitFadeUp" className={`${styles.typewriter} ${styles.mobile_middle_line}`}>
                 <p className={styles.home_paragraph_2}>
-                    web developer. I am learning programming in  my spare 
+                    frontend developer. I am learning programming in  my spare 
                 </p>
                 </div>
                 <br/>

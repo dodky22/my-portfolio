@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom'
 import {useDispatch} from 'react-redux'
 import {register} from '../actions/userActions'
 
-import {gsap, Power3} from 'gsap'
+import {gsap, Power4} from 'gsap'
 import styles from '../css/LoginRegisterStyles.module.css'
  
  const validate = values => {
@@ -41,16 +41,9 @@ import styles from '../css/LoginRegisterStyles.module.css'
  };
  
  const RegisterForm = ({location}) => {
-    const [passwordShown, setPasswordShown] = useState(false);
-
+  const [passwordShown, setPasswordShown] = useState(false);
 
   let form = useRef(null);
-  let field1 = useRef(null);
-  let field2 = useRef(null);
-  let field3 = useRef(null);
-  let field4 = useRef(null);
-  let button = useRef(null);
-  let eye = useRef(null);
 
   const dispatch = useDispatch()
 
@@ -59,9 +52,7 @@ import styles from '../css/LoginRegisterStyles.module.css'
   const redirect = location.search ? location.search.split('=')[1] : '/'
 
   useEffect(() => {
-    tl.to(form, {duration:0.5, scale:1, ease: Power3.easeInOut})
-      .staggerTo([field3,field1,field2,field4,button], 1, {x:0 , ease:Power3.easeInOut}, 0.2)
-      .to(eye, {duration: 0.2, opacity: 1, ease:Power3.easeInOut})
+    tl.to(form, {duration:1.5, y:0,opacity:1, ease: Power4.easeInOut})
   }, [tl])
 
    const formik = useFormik({
@@ -94,7 +85,6 @@ import styles from '../css/LoginRegisterStyles.module.css'
                     onBlur={formik.handleBlur}
                     value={formik.values.name}
                     placeholder="Name"
-                    ref={el => (field3 = el)}
                 />
                 <span className={styles.line} ></span>
                 {formik.touched.name && formik.errors.name ? (
@@ -110,7 +100,6 @@ import styles from '../css/LoginRegisterStyles.module.css'
                     onBlur={formik.handleBlur}
                     value={formik.values.email}
                     placeholder="Email"
-                    ref={el => (field2 = el)}
                 />
                 <span className={styles.line} ></span>
                 {formik.touched.email && formik.errors.email ? (
@@ -126,14 +115,13 @@ import styles from '../css/LoginRegisterStyles.module.css'
                     onBlur={formik.handleBlur}
                     value={formik.values.password}
                     placeholder="Password"
-                    ref={el => (field1 = el)}
                 />
                 <span className={styles.line} ></span>
                 {formik.touched.password && formik.errors.password ? (
                     <span className={styles.loginformerrormsg}>{formik.errors.password}</span>
                 ) : null}
                 <i style={{ color: passwordShown ? '#ff9307' : null, opacity:0}} className={`fas fa-eye ${styles.password_eye_toogle}`}
-                 onClick={togglePasswordVisiblity}  ref={el => (eye = el)}></i>
+                 onClick={togglePasswordVisiblity} ></i>
 
             </div>
             <div className={styles.logininputWrap} >
@@ -145,7 +133,6 @@ import styles from '../css/LoginRegisterStyles.module.css'
                     onBlur={formik.handleBlur}
                     value={formik.values.confirmPassword}
                     placeholder="Confirm password"
-                    ref={el => (field4 = el)}
                 />
                 <span className={styles.line} ></span>
                 {formik.touched.confirmPassword && formik.errors.confirmPassword ? (
@@ -154,7 +141,7 @@ import styles from '../css/LoginRegisterStyles.module.css'
 
             </div>
         </div>
-        <div className={styles.btnWrap} ref={el => (button = el)}>
+        <div className={styles.btnWrap}>
           <AwesomeButton type='primary' >REGISTER</AwesomeButton>
           <p>Have an account? <Link to={redirect ? `/jm-login?redirect=${redirect}` : '/login'}>Login</Link></p>
         </div>

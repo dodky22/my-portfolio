@@ -49,7 +49,7 @@ const ImageSlider = ({images}) => {
   return (
         <div style={{marginTop:'20px'}} id="quitFadeUp">
           <div style={{height: '35px',padding: '2px', background: '#1b1b1b', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>
-            <h4 style={{color: '#999', padding: '2px 20px',minWidth:'150px', background: '#252525', borderRadius: '20px', margin: 0}}>IMAGES</h4>
+            <h4 style={{color: '#999', padding: '2px 20px',minWidth:'150px', background: '#252525', borderRadius: '20px', margin: 0}}>GALLERY</h4>
           </div>
           <Slider {...settings}>
             { images && images.map((el,id) => (

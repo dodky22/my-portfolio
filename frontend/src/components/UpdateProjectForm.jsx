@@ -6,7 +6,8 @@ import axios from 'axios'
 import {updateProject} from '../actions/projectActions'
 import {PROJECTS_UPDATE_RESET, PROJECTS_DETAILS_RESET} from '../constants/projectConstants'
 
-import Loader from '../components/Loader'
+import Loader from './Loader'
+import Message from './Message'
 
 import styles from '../css/AdminStyles.module.css'
  
@@ -30,7 +31,7 @@ import styles from '../css/AdminStyles.module.css'
     const dispatch = useDispatch()
 
     const projectUpdate = useSelector(state => state.projectUpdate)
-    const {success: successUpdate} = projectUpdate
+    const {success: successUpdate,loading: loadingUpdate, error:errorUpdate} = projectUpdate
 
     useEffect(() => {
         if(successUpdate){
@@ -97,7 +98,6 @@ import styles from '../css/AdminStyles.module.css'
     }
    return (
      <form onSubmit={formik.handleSubmit} className={styles.projectEditForm} >
-        <div >
             <div className={styles.projectEditFormGroup}>
                 <label>NAME</label>
                 <input
@@ -129,7 +129,6 @@ import styles from '../css/AdminStyles.module.css'
                     <span >{formik.errors.shortDesc}</span>
                 ) : null}
             </div>
-            
             <div className={styles.projectEditFormGroup}>
                 <label>Description</label>
                 <textarea
@@ -147,8 +146,7 @@ import styles from '../css/AdminStyles.module.css'
                     <span >{formik.errors.description}</span>
                 ) : null}
             </div>
-        </div>
-        <div >
+        
             <div className={styles.projectEditFormGroup}>
                 <label>Proejct URL</label>
                 <input
@@ -181,16 +179,16 @@ import styles from '../css/AdminStyles.module.css'
             </div>
             
             <div className={styles.projectEditFormGroup}>
-                <label>Project status <span>(My project / Project i helped with)</span></label>
-                <input
+                <label>Project status</label>
+                <select 
+                    name="status" 
                     id="status"
-                    name="status"
-                    type="text"
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
-                    value={formik.values.status}
-                    placeholder="status"
-                   />
+                    value={formik.values.status}>
+                    <option value="My Project">My Project</option>
+                    <option value="Learning">Learning</option>
+                </select>
                 {formik.touched.status && formik.errors.status ? (
                     <span >{formik.errors.status}</span>
                 ) : null}
@@ -239,9 +237,9 @@ import styles from '../css/AdminStyles.module.css'
                    />
                     {uploading && <Loader />}
             </div>
+            <div style={{width:'100%', alignItems:'center', justifyContent: 'center'}}>{loadingUpdate && <Loader />}</div>
+            {errorUpdate && <Message>{errorUpdate}</Message>}
             <button type="submit" className={styles.updateButton}>UPDATE</button>  
-        </div>  
-
      </form>
    );
  };

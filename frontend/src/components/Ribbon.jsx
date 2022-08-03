@@ -5,7 +5,7 @@ import styles from '../css/PortfolioPageStyles.module.css'
 const Ribbon = ({title}) => {
     let color
     if (title.toLowerCase() !== 'my project') {
-        color= '#0773ff'
+        color= '#0077ba'
     }
     return (
         <div className={styles.ribbon} style={{background: color}}>

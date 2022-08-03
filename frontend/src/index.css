@@ -24,7 +24,7 @@ body {
   margin: 0;
   font-family: Lato, Helvetica, Arial, sans-serif;
   color: #cacaca;
-  text-shadow: 2px 2px 0 rgb(0 0 0 / 15%);
+  /* text-shadow: 2px 2px 0 rgb(0 0 0 / 15%); */
   font-weight: 300;
   background-color: #2f2f2f;
 }
