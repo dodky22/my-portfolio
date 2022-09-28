@@ -12,7 +12,7 @@ import Message from '../components/Message'
    const errors = {};
  
    if (!values.name) {
-     errors.name = 'Required';
+     errors.name = 'Required!';
    } else if (values.name.length < 5) {
      errors.name = 'Must be 5 characters or more';
    }else if (values.name.length > 30){
@@ -20,13 +20,13 @@ import Message from '../components/Message'
    }
  
    if (!values.email) {
-     errors.email = 'Required';
+     errors.email = 'Required!';
    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(values.email)) {
      errors.email = 'Invalid email address';
    }
    
    if (!values.message) {
-    errors.message = 'Required';
+    errors.message = 'Required!';
     } else if (values.message.length < 20) {
         errors.message = 'Must be 20 characters or more';
     }

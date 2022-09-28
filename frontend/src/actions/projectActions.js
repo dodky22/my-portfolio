@@ -10,8 +10,8 @@ export const listProjects = () => async(dispatch) => {
         dispatch({type: PROJECTS_LIST_SUCCESS, payload: data})
 
     } catch (error) {
-        dispatch({type: PROJECTS_LIST_FAIL, payload: error.response && error.response.data.message ? 
-                    error.response.data.message : error.message})
+            dispatch({type: PROJECTS_LIST_FAIL, payload: error.response && error.response.data.message ? 
+                        error.response.data.message : error.message})
         
     }
 }

@@ -23,7 +23,7 @@ const SocialLinks = () => {
                 {/* // eslint-disable-next-line */}
                 <li id="quitFadeLeft"><a href="https://linkedin.com/in/jozef-müller" target="_blank" rel="noopener noreferrer" className={styles.linkedin} title="Follow me on LinkedIn"><span>Follow me on LinkedIn</span></a></li>
                 {/* // eslint-disable-next-line */}
-                <li id="quitFadeLeft"><a href="\Jozef_Müller_en_CV.pdf" target="_blank" rel="noopener noreferrer" className={styles.CV} title="My CV"><span>CV</span></a></li>
+                <li id="quitFadeLeft"><a href="\jozef_mueller_en_cv.pdf" target="_blank" rel="noopener noreferrer" className={styles.CV} title="My CV"><span>CV</span></a></li>
             </ul>
         </div>
     )

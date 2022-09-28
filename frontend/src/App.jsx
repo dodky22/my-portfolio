@@ -35,7 +35,7 @@ const App = () => {
               <Route path="/jm-register" exact component={RegisterPage}/>
               <Route path="/admin/projects" exact component={ProjectListPage}/>
               <Route path="/project/:slug" exact component={ProjectPage}/>
-              {/* <Route path="/project/:id" exact component={ProjectPage}/> */}             
+              {/* <Route path="/project/:id" exact component={ProjectPage}/>              */}
               <Route path="/admin/project/:slug/:id/edit" exact component={ProjectEditPage}/>
               <Route component={Page404}/>
         </Switch>
@@ -51,6 +51,9 @@ const Container = styled.div`
   padding: 0px 25px;
   min-height:100vh;
   height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   @media (max-width: 768px) {
     padding: 0px 70px;
   }
@@ -58,10 +61,10 @@ const Container = styled.div`
     padding: 0px 30px;
   }
   @media (max-width: 400px) {
-    padding: 0px 20px;
+    padding: 0px 15px;
   }
   @media (max-width: 350px) {
-    padding: 0px 15px;
+    padding: 0px 10px;
   }
 `
 

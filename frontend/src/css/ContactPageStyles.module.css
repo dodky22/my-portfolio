@@ -10,11 +10,12 @@
   padding-right: 5px;
   margin: 5px 0;
   overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: 1px solid transparent; /* The typwriter cursor */
+  border-right: 4px solid transparent; /* The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
   animation: typing 1s steps(40, end) forwards,
     blink-caret 0.75s step-end infinite;
   animation-delay: 0.5s;
+  line-height: 1;
 }
 
 .contactfrom {
@@ -41,7 +42,7 @@
   border: none;
   border-bottom: 0.5px solid #696969;
   color: #fff;
-  font-weight: 300;
+  font-weight: 400;
   padding-left: 15px;
   margin-top: 20px;
   transition: all 0.5s ease-in-out;
@@ -57,7 +58,7 @@
   border: none;
   border-bottom: 0.5px solid #696969;
   color: #fff;
-  font-weight: 300;
+  font-weight: 400;
   padding-left: 15px;
   margin-bottom: 0;
   margin-top: 20px;
@@ -114,6 +115,7 @@ select:-webkit-autofill:focus {
   animation: slide-error 250ms forwards;
   animation-timing-function: ease-in-out;
   font-size: 14px;
+  font-weight: 400;
 }
 
 .contactfrom > .btnWrap > button {
@@ -131,12 +133,13 @@ select:-webkit-autofill:focus {
 .contactpage_link {
   color: #e4e4e4;
   transition: color 0.5s ease;
-  font-weight: 600;
+  font-weight: 400;
   display: inline-block;
   position: relative;
   margin-left: 5px;
+  padding: 0px 3px;
 }
-.contactpage_link:before {
+/* .contactpage_link:before {
   background: none repeat scroll 0 0 transparent;
   bottom: 0;
   content: '';
@@ -151,7 +154,7 @@ select:-webkit-autofill:focus {
   transform: rotate(0deg) !important;
   border: none !important;
   margin: 0 !important;
-}
+} */
 .contactpage_link::after {
   position: absolute;
   content: '';

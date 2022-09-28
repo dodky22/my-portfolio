@@ -4,21 +4,23 @@
 
 .typewriter.desktop_title .home_heading {
   color: white;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 0px;
   display: block;
   opacity: 0;
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   border-right: 3px solid transparent; /* The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
-  animation: typing 1.5s steps(40, end) forwards, blink-caret 0.75s step-end 2;
+  animation: typing 1.5s steps(20, end) forwards, blink-caret 0.75s step-end 2;
   margin-bottom: 2rem;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 .desktop_home_p .typewriter .home_paragraph,
 .desktop_home_p .typewriter .home_paragraph_2 {
   color: white;
-  font-weight: 300;
+  font-weight: 400;
   display: block;
   opacity: 0;
   overflow: hidden; /* Ensures the content is not revealed until the animation */
@@ -26,37 +28,39 @@
   white-space: nowrap; /* Keeps the content on a single line */
   margin: 3px;
   animation: typing 2s steps(40, end) forwards, blink-caret 0.75s step-end 3;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 .desktop_home_p .typewriter .home_paragraph_3 {
   color: white;
   display: block;
-  font-weight: 300;
+  font-weight: 400;
   opacity: 0;
   margin: 3px;
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   border-right: 3px solid transparent; /* The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
+  margin-left: 0px;
+  margin-right: 0px;
 }
 .typewriter .home_heading {
   animation-delay: 1s;
 }
 .desktop_home_p .typewriter .home_paragraph {
-  animation-delay: 2.5s;
+  animation-delay: 2s;
 }
 .desktop_home_p .typewriter .home_paragraph_2 {
-  animation-delay: 4.5s;
+  animation-delay: 4s;
 }
 .desktop_home_p .typewriter .home_paragraph_3 {
   animation: typing 2s steps(40, end) forwards,
-    blink-caret 0.75s step-end infinite;
-  animation-delay: 6.5s;
+    blink-caret 1s step-end infinite;
+  animation-delay: 6s;
 }
-
 /*
 * MOBILE TYPING ANIM
 */
-
 .mobile_title {
   display: none;
 }
@@ -79,14 +83,14 @@
 .mobile_home_p .typewriter .home_paragraph_4,
 .mobile_home_p .typewriter .home_paragraph_5 {
   color: white;
-  font-weight: 300;
+  font-weight: 400;
   display: block;
   opacity: 0;
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   border-right: 2px solid transparent; /* The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
   margin: 3px 0px;
-  animation: typing 1.25s steps(40, end) forwards, blink-caret 0.75s step-end 1;
+  animation: typing 1.25s steps(40, end) forwards, blink-caret 0.75s step-end 2;
   font-size: 14px;
 }
 .typewriter.mobile_title .home_heading_2 {
@@ -111,7 +115,7 @@
 }
 .mobile_home_p .typewriter .home_paragraph_5 > a,
 .mobile_home_p .typewriter .home_paragraph_4 > a {
-  font-weight: 500 !important;
+  font-weight: 600 !important;
   color: #cacaca;
 }
 
@@ -130,27 +134,13 @@
 
 .homepage_link {
   color: #e4e4e4;
-  font-weight: 600;
+  font-weight: 400;
   display: inline-block;
   position: relative;
   transition: all 0.325s cubic-bezier(0.05, 0.65, 0.18, 1);
   padding-bottom: 1px;
-}
-.homepage_link:before {
-  background: none repeat scroll 0 0 transparent;
-  bottom: 0;
-  content: '';
-  display: block;
-  height: 1px;
-  left: 50%;
-  position: absolute;
-  background: #ff9307;
-  transition: width 0.325s cubic-bezier(0.05, 0.65, 0.18, 1) 0s,
-    left 0.325s cubic-bezier(0.05, 0.65, 0.18, 1) 0s;
-  width: 0;
-  transform: rotate(0deg) !important;
-  border: none !important;
-  margin: 0 !important;
+  padding: 0px 2px;
+
 }
 .homepage_link::after {
   position: absolute;
@@ -179,13 +169,14 @@
 }
 
 .buttons_container {
-  margin-top: 100px;
-  transform: translateY(1000%);
-  max-width: 600px;
+  margin-top: 50px;
+  max-width: 500px;
   width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  overflow: hidden;
+  transform: translateY(100%);
 }
 
 .buttons_container > a > button {
@@ -254,7 +245,6 @@
   background-color: #0077ba;
 }
 .social_links .CV {
-  /* background-color: #871515; */
   background-color: #ff9307; 
 }
 .social_links span {

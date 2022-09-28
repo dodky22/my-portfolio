@@ -47,7 +47,27 @@ const HomePage = () => {
         setTimeout(() => {
             history.push(href)
         }, animOutTimeline.duration() * 1000);
+    }
 
+    const getAge = (dateString) => {
+        let today = new Date();
+        let birthDate = new Date(dateString);
+        let age = today.getFullYear() - birthDate.getFullYear();
+        let m = today.getMonth() - birthDate.getMonth();
+        if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+            age--;
+        }
+        return age;
+    }
+
+    const handleClick = (e) => {
+        e.preventDefault()
+        animateElementsOut()
+
+        console.log(e.target.parentNode.href);
+        setTimeout(() => {
+            history.push(`/${e.target.parentNode.href.split('/').pop()}`)
+        }, animOutTimeline.duration() * 1000 + 300 );  
     }
 
     return (
@@ -63,24 +83,23 @@ const HomePage = () => {
             <div   className={`${styles.desktop_home_p}`}>
                 <div id="quitFadeUp" className={styles.typewriter}>
                     <p  className={styles.home_paragraph}>
-                        I am 25 years old graduate. Aspiring to become a frontend developer. I
-                        am learning
+                        I am {getAge("1997/05/08")} years old graduate. Aspiring to become a Frontend Developer.
                     </p>
                 </div>
                 <br/>
                 <div id="quitFadeUp" className={`${styles.typewriter} ${styles.desktop_middle_line}`}>
                     <p className={styles.home_paragraph_2}>
-                        programming in my spare time. If you want to see my work feel
-                        free to
+                         If you want to see my work feel
+                        free to visit my {" "}
+                            <Link to="/portfolio" className={styles.homepage_link} onClick={(e) => handleClick(e)}>
+                                <strong>portfolio page.</strong>
+                            </Link>
                     </p>
                 </div>
                 <br/>
                 <div id="quitFadeUp" className={styles.typewriter}>
                     <p className={styles.home_paragraph_3}>
-                            visit my {" "}
-                            <Link to="/portfolio" className={styles.homepage_link}>
-                                <strong>portfolio page.</strong>
-                            </Link>
+                              
                             {" "}You can contact me via email at:{" "}
                             <a href="mailto:dodkymull@gmail.com" className={styles.homepage_link}>
                                 <strong>dodkymull@gmail.com</strong>
@@ -106,29 +125,29 @@ const HomePage = () => {
                 <br/>
                 <div id="quitFadeUp" className={`${styles.typewriter} ${styles.mobile_middle_line}`}>
                 <p className={styles.home_paragraph_2}>
-                    frontend developer. I am learning programming in  my spare 
+                    Frontend Developer.  
                 </p>
                 </div>
                 <br/>
                 <div id="quitFadeUp" className={styles.typewriter}>
                     <p className={styles.home_paragraph_3}>
-                        time. If you want to see my work feel free to visit
+                     If you want to see my work 
                     </p>                          
                 </div>
                 <br/>
                 <div id="quitFadeUp" className={styles.typewriter}>
                     <p className={styles.home_paragraph_4}>
-                        my
+                    feel free to visit my{" "} 
                         <Link to="/portfolio" className={styles.homepage_link}>
-                            <strong> portfolio page. </strong>
+                            <strong>portfolio page. </strong>
                         </Link>
-                        You can contact me via
+                        You can also  
                     </p>                          
                 </div>
                 <br/>
                 <div id="quitFadeUp" className={styles.typewriter}>
                     <p className={styles.home_paragraph_5}>
-                        email at:
+                    contact me via email at:{" "}
                         <a href="mailto:dodkymull@gmail.com" className={styles.homepage_link}>
                             <strong> dodkymull@gmail.com</strong>
                         </a>
@@ -140,10 +159,10 @@ const HomePage = () => {
           {/* BUTTONS */}
           <div id="quitFadeDown"  className={`${styles.buttons_container}`} ref={el => (buttons = el)} >
             <Link to="/portfolio" onClick={(e) => {handleHomeBtnClick(e)}}>
-                <AwesomeButton type="primary" ripple><span style={{fontWeight:900, userSelect: 'none'}}>PORFOLIO</span></AwesomeButton>
+                <AwesomeButton type="primary" ripple><span style={{fontWeight:700, userSelect: 'none'}}>PORFOLIO</span></AwesomeButton>
             </Link>
             <Link to="/contact" onClick={(e) => {handleHomeBtnClick(e)}}>
-                <AwesomeButton type="primary" ripple><span style={{fontWeight:900, userSelect: 'none'}}>CONTACT</span></AwesomeButton>
+                <AwesomeButton type="primary" ripple><span style={{fontWeight:700, userSelect: 'none'}}>CONTACT</span></AwesomeButton>
             </Link>
           </div>
           {/* ENDOF BUTTONS */}
@@ -153,7 +172,6 @@ const HomePage = () => {
 }
 
 const Home = styled.div`
-  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;

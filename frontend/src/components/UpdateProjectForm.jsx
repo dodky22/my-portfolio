@@ -185,8 +185,12 @@ import styles from '../css/AdminStyles.module.css'
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                     value={formik.values.status}>
-                    <option value="My Project">My Project</option>
-                    <option value="Learning">Learning</option>
+                    <option value="My Project">MY PROJECT</option>
+                    <option value="Learning">LEARNING</option>
+                    <option value="MERN">MERN</option>
+                    <option value="REACT">REACT</option>
+                    <option value="WORDPRESS">WORDPRESS</option>
+                    <option value="GAME">GAME</option>
                 </select>
                 {formik.touched.status && formik.errors.status ? (
                     <span >{formik.errors.status}</span>

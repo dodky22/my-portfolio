@@ -41,7 +41,6 @@ const ContactPage = () => {
 const Contact = styled.div`
   min-height: calc(100vh - 100px);
   height:100%;
-  background-color: #2f2f2f;
   display: flex;
   align-items: flex-start;
   justify-content: center;

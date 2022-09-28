@@ -13,11 +13,12 @@
   margin: 5px 0;
   text-align: left;
   overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: 1px solid transparent; /* The typwriter cursor */
+  border-right: 4px solid transparent; /* The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
   animation: typing 1s steps(40, end) forwards,
     blink-caret 0.75s step-end infinite;
   animation-delay: 0.5s;
+  line-height: 1;
 }
 
 /* The typing effect */
@@ -60,6 +61,8 @@
   padding-top: 100px;
   color: #fff;
   font-weight: 300;
+  max-width: 1200px;
+  width: 100%;
 }
 .single_project_container p {
   color: #cacaca;
@@ -72,14 +75,19 @@
 
 .single_item_main_div p {
   color: #fff;
-  font-weight: 300;
+  font-weight: 400;
   text-align: left;
+  line-height: 26px;
+}
+.single_item_main_div p strong{
+  font-weight: 900 !important;
 }
 .single_item_buttons {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  margin-top: 25px;
 }
 
 .single_item_button {

@@ -1,5 +1,5 @@
 .adminprojects {
-  margin-top: 100px;
+  width: 100%;
 }
 
 .adminprojects > div {
@@ -132,9 +132,10 @@
 */
 
 .editSection {
-  margin-top: 100px;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  padding: 100px 0px;
 }
 .editSection > div{
   display: flex;

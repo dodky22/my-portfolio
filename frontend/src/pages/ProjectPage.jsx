@@ -49,21 +49,21 @@ const ProjectPage = ({match}) => {
                         </div>
                         <Separator />
                     </div>
-                    <p id="quitFadeUp"  >{shortDesc}</p>
+                    <p id="quitFadeUp">{shortDesc}</p>
                     <div  id="quitFadeUp" className={`${styles.single_item_buttons} singlePortfolioEnterDown`}>
                         <AwesomeButton className={styles.single_item_button} ripple type="primary" href={url} target="_blank" >
-                            <span style={{fontWeight:900, userSelect: 'none'}}>Visit the website</span>
+                            <span style={{fontWeight:900, userSelect: 'none'}}>VISIT THE WEBSITE</span>
                         </AwesomeButton>
                         {codeUrl === "-" ? ( <button className={styles.single_item_button_disabled} type="primary" disabled>
-                            Code
+                            CODE
                         </button>): ( <AwesomeButton className={styles.single_item_button} ripple type="primary" href={codeUrl}>
-                            Code
+                            CODE
                         </AwesomeButton>)  }    
                     </div>
                     <ImageSlider images={imgs} />
                     <h2 id="quitFadeDown" className={`${styles.single_item_about} singlePortfolioEnterDown`} >About</h2>
                     <Separator />
-                    <p id="quitFadeDown" className="singlePortfolioEnterDown">{description}</p>
+                    <p id="quitFadeDown" className="singlePortfolioEnterDown" dangerouslySetInnerHTML={{__html: description}}></p>
                     <h2 id="quitFadeDown" className={`${styles.single_item_tech} singlePortfolioEnterDown`}>Technologies</h2>
                     <h3 id="quitFadeDown" className="singlePortfolioEnterDown">Technologies i was using while working on this project</h3>
                     <Separator />

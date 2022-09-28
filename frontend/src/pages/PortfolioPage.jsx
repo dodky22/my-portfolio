@@ -84,13 +84,13 @@ const PortfolioPage = () => {
 
 const Portfolio = styled.div`
   min-height: 100vh;
-  background-color: #2f2f2f;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction: column;
   overflow: hidden;
   padding-top: 125px;
+  width: 100%;
 `
 
 export default PortfolioPage
