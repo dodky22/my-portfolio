@@ -1,0 +1,226 @@
+.login_page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.loginfrom {
+  width: 100%;
+  margin-top: 20px;
+  max-width: 375px;
+  background: #fff;
+  padding: 10px 25px;
+  border-radius: 2px;
+  color: #000;
+  text-align: left;
+  font-weight: 300;
+  min-height: 350px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  -webkit-box-shadow: 0px 15px 15px -5px #0e0e0e;
+  box-shadow: 0px 15px 15px -5px #0e0e0e;
+  transform: translateY(-30px);
+  opacity:0;
+}
+
+.loginfrom > div > h1 {
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+  text-align: center;
+  color: #535353;
+  font-size: 24px;
+}
+
+.loginfrom > div > .logininputWrap {
+  width: 100%;
+  position: relative !important;
+  display: flex;
+  flex-direction: column;
+}
+
+.loginfrom > div > .logininputWrap > input[type='password'],
+.loginfrom > div > .logininputWrap > input[type='text'],
+.loginfrom > div > .logininputWrap > input[type='email'] {
+  width: calc(100% - 10px);
+  height: 50px;
+  margin-bottom: 0;
+  background: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 0.5px solid #696969;
+  color: #000;
+  font-weight: 400;
+  padding-left: 5px;
+  margin-top: 10px;
+  transition: all 0.5s ease-in-out;
+}
+
+.loginfrom > div > .logininputWrap > input[type='password']:focus,
+.loginfrom > div > .logininputWrap > input[type='text']:focus,
+.loginfrom > div > .logininputWrap > input[type='email']:focus {
+  border-bottom: 1px solid transparent;
+}
+
+.loginfrom > div > .logininputWrap > .line:after {
+  width: calc(100%);
+  display: block;
+  content: '';
+  border-bottom: solid 2px #ff9307;
+  transform: scaleX(0);
+  transition: transform 500ms ease-in-out;
+  position: relative;
+  top: -2px;
+}
+
+.loginfrom > div > .logininputWrap > input[type='password']:focus + .line:after,
+.loginfrom > div > .logininputWrap > input[type='text']:focus + .line:after,
+.loginfrom > div > .logininputWrap > input[type='email']:focus + .line:after {
+  transform: scaleX(1);
+}
+
+/* Change Autocomplete styles in Chrome*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border-bottom: 1px solid #ff9307;
+  -webkit-text-fill-color: #ff9307;
+  -webkit-box-shadow: 0 0 0px 1000px #696969 inset !important;
+  transition: background-color 5000s ease-in-out 0s;
+  font-weight: 300;
+}
+
+.loginfrom > div > .logininputWrap > .loginformerrormsg {
+  position: absolute;
+  top: 10px;
+  right: 0px;
+  z-index: 50;
+  color: #ff9307;
+  animation: slide-error 250ms forwards;
+  animation-timing-function: ease-in-out;
+  font-size: 14px;
+  font-weight: 500;
+  text-shadow: none;
+}
+
+.loginfrom > .btnWrap > button {
+  width: 200px;
+  margin-top: 10px;
+}
+.loginfrom > .btnWrap > p{
+  font-weight: 500;
+  text-shadow: none;
+  color: #696969 !important;
+}
+.loginfrom > .btnWrap > p > a {
+  color: #ff9307 !important;
+}
+
+.loginfrom > .btnWrap > p > a:hover {
+  text-decoration: underline;
+}
+
+.logout_wrap {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #202020;
+  padding-right: 0;
+  border-top-left-radius: 5px;
+  border-bottom: none;
+  border-right: none;
+  z-index: 1000;
+  border-top: 1px solid rgb(74, 74, 74);
+}
+
+.loggedin_status_layout {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+  z-index: 1000 !important;
+  background-color: #202020;
+}
+
+.loggedin_status_layout h3 {
+  cursor: default;
+  font-weight: 400;
+  margin: 0;
+  font-size: 18px;
+  padding-left: 15px;
+}
+
+.loggedin_status_layout span {
+  padding: 10px 15px;
+  transition: all 0.3s ease-in-out;
+}
+
+.loggedin_status_layout span:hover {
+  cursor: pointer;
+  color: #ff9307;
+  background-color: #353535;
+}
+
+.logout_wrap ul {
+  list-style: none;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  max-width: 200px;
+  margin-left: auto;
+  position: fixed;
+  bottom: 40px;
+  right: 0px;
+  width: 200px;
+  background-color: #202020;
+  border: 1px solid rgb(74, 74, 74);
+  border-bottom: 0px;
+}
+
+.logout_wrap ul li {
+  margin: 0;
+  padding: 10px 0;
+  text-align: right;
+  padding-right: 20px;
+  transition: all 0.3s ease-in-out;
+  color: #fff;
+  font-weight: 400;
+}
+
+.logout_wrap ul li:hover > a {
+  color: #ff9307;
+  width: 100%;
+}
+
+.logout_wrap ul li:hover {
+  color: #ff9307;
+  cursor: pointer;
+  font-weight: normal;
+  background-color: #353535;
+}
+
+.password_eye_toogle {
+  position: absolute;
+  bottom: 20px;
+  right: 0px;
+  font-size: 1rem;
+}
+
+.password_eye_toogle:hover {
+  color: #ff9307;
+  cursor: pointer;
+}

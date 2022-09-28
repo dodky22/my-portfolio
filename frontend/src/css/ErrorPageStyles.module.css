@@ -1,0 +1,149 @@
+.errorpagecontainer {
+  min-height: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.static {
+  width: 100%;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  top: -100px;
+  opacity: 0.05;
+  z-index: 230;
+  user-select: none;
+  user-drag: none;
+}
+
+.error_page {
+  text-align: center;
+  margin: auto;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  animation: noise 2s linear infinite;
+  overflow: default;
+  font-size: 5em;
+  color: #ff9307;
+}
+
+.error_page:after {
+  content: '404';
+  text-align: center;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  animation: noise-1 0.2s linear infinite;
+}
+
+.error_page:before {
+  content: '404';
+  text-align: center;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  color: red;
+  animation: noise-2 0.2s linear infinite;
+}
+
+@keyframes noise-1 {
+  0%,
+  20%,
+  40%,
+  60%,
+  70%,
+  90% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.5;
+    left: -6px;
+  }
+  80% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0.6;
+    left: 2px;
+  }
+}
+
+@keyframes noise-2 {
+  0%,
+  20%,
+  40%,
+  60%,
+  70%,
+  90% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.5;
+    left: 6px;
+  }
+  80% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 0.6;
+    left: -2px;
+  }
+}
+
+@keyframes noise {
+  0%,
+  3%,
+  5%,
+  42%,
+  44%,
+  100% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  4.3% {
+    opacity: 1;
+    transform: scaleY(1.7);
+  }
+  43% {
+    opacity: 1;
+    transform: scaleX(1.5);
+  }
+}
+
+@keyframes noise-3 {
+  0%,
+  3%,
+  5%,
+  42%,
+  44%,
+  100% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  4.3% {
+    opacity: 1;
+    transform: scaleY(4);
+  }
+  43% {
+    opacity: 1;
+    transform: scaleX(10) rotate(60deg);
+  }
+}
